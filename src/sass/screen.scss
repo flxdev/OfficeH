@@ -4,6 +4,7 @@
 html {
 	text-size-adjust: 100%;
 	height: 100%;
+	font-size: 16px;
 }
 body {
 	-webkit-font-smoothing: antialiased;
@@ -95,6 +96,7 @@ a {
 					@include x-rem(width, 21px);
 					@include x-rem(height, 24px);
 					background-image: url(../img/icons/callback.png);
+					background-size: cover;
 					display: inline-block;
 					vertical-align: middle;
 					@include x-rem(margin-right, 15px);
@@ -154,9 +156,12 @@ a {
 					@include x-rem(font-size, 14px);
 					text-transform: uppercase;
 					line-height: 28px;
-					border-bottom: 1px solid $yellow;
+					border-bottom: 1px solid transparent;
 					@include x-rem(padding, 4px 0);
 					color: $turq;
+					&.active {
+						border-color: $yellow;
+					}
 				}
 			}
 		}
@@ -169,6 +174,16 @@ a {
 }
 .wrapper {
 	position: relative;
+	z-index: 3;
+}
+#index {
+	.wrapper {
+		@include x-rem(max-width, 964px);
+		margin: 0 auto;
+		.l {
+			width: 100%;
+		}
+	}
 }
 .fullscreen {
 	position: fixed;
@@ -180,16 +195,118 @@ a {
 		width: 100%;
 		height: 100%;
 		background-size: cover;
+		background-position: 50% 100%;
 	}
 	.swiper-pagination {
-		top: 50%;
+		top: 45%;
 		@include x-rem(right, 50px);
+		transform: translateY(-50%);
 		left: auto;
 		bottom: auto;
 		width: auto;
 		.swiper-pagination-bullet {
 			display: block;
-			margin-bottom: 22px;
+			background-color: transparent;
+			opacity: 1;
+			border: 1px solid rgba(0,0,0,.3);
+			transition: border-color 0.3s ease, background-color 0.3s ease;
+			&:not(:last-child) {
+				margin-bottom: 22px;
+			}
+			&.swiper-pagination-bullet-active {
+				border-color: $turq;
+				background-color: $turq;
+			}
+		}
+	}
+}
+.lead {
+	@include x-rem(max-width, 964px);
+	margin: 3% auto 0;
+	text-align: center;
+	.title {
+		font-family: $M300;
+		@include x-rem(font-size, 40px);
+		color: $text;
+		text-transform: uppercase;
+		display: inline-block;
+		text-transform: uppercase;
+		font-weight: normal;
+		@include x-rem(letter-spacing, 1.9px);
+		@include x-rem(margin, 0 0 50px 0);
+	}
+	.concept {
+		@include x-rem(width, 307px);
+		display: inline-block;
+		a {
+			width: 100%;
+			@include x-rem(height, 70px);
+			@include x-rem(line-height, 70px);
+			@include x-rem(border-radius, 35px);
+			background-color: $yellow;
+			font-family: $M900;
+			text-transform: uppercase;
+			@include x-rem(font-size, 12px);
+			color: $brown;
+			display: inline-block;
+			@include x-rem(letter-spacing, 1.9px);
+		}
+	}
+}
+.title {
+	font-family: $M300;
+	@include x-rem(font-size, 40px);
+	color: $text;
+	text-transform: uppercase;
+	text-transform: uppercase;
+	font-weight: normal;
+	@include x-rem(letter-spacing, 1.9px);
+	text-align: center;
+	@include x-rem(margin, 0 0 50px 0);
+}
+.grid {
+	.grid-nav {
+		@include x-rem(width, 768px);
+		@include x-rem(margin, 0 auto 40px);
+		text-align: center;
+		.button {
+			display: inline-block;
+			@include x-rem(padding, 4px 0);
+			border-bottom: 1px solid transparent;
+			color: $gridNav;
+			font-family: $M700;
+			text-transform: uppercase;
+			@include x-rem(font-size, 12px);
+			cursor: pointer;
+			letter-spacing: 2.1px;
+			margin-bottom: 15px;
+			&:not(:first-child) {
+				margin-left: 16px;
+			}
+			&.is-checked {
+				border-color: $yellow;
+				font-family: $M900;
+				color: $text;
+			}
+		}
+	}
+	.grid-layout {
+		@include clearfix;
+		position: relative;
+		@include x-rem(margin, 0 0 95px);
+		width: 100%;
+		.grid-sizer {
+			width: 25%;
+		}
+		.grid-item {
+			width: 25%;
+			float: left;
+			img {
+				max-width: 100%;
+				display: block;
+				height: 100%;
+				padding: 1px;
+			}
 		}
 	}
 }

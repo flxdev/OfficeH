@@ -2,5 +2,6 @@
 //= ../../bower_components/jquery/dist/jquery.min.js
 
 //= lib/swiper.min.js
+//= lib/isotope.pkgd.min.js
 
 //= app.js
