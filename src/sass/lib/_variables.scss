@@ -1,1 +1,21 @@
-$blue: blue;
+@include font-face('museosanscyrl_100_italic', "../fonts/museosanscyrl_100_italic-webfont" ,null, null, ttf eot woff2 woff svg);
+@include font-face('museosanscyrl_100', "../fonts/museosanscyrl_100-webfont" ,null, null, ttf eot woff2 woff svg);
+@include font-face('museosanscyrl_300_italic', "../fonts/museosanscyrl_300_italic-webfont" ,null, null, ttf eot woff2 woff svg);
+@include font-face('museosanscyrl_300', "../fonts/museosanscyrl_300-webfont" ,null, null, ttf eot woff2 woff svg);
+@include font-face('museosanscyrl_500_italic', "../fonts/museosanscyrl_500_italic-webfont" ,null, null, ttf eot woff2 woff svg);
+@include font-face('museosanscyrl_500', "../fonts/museosanscyrl_500-webfont" ,null, null, ttf eot woff2 woff svg);
+@include font-face('museosanscyrl_700_italic', "../fonts/museosanscyrl_700_italic-webfont" ,null, null, ttf eot woff2 woff svg);
+@include font-face('museosanscyrl_700', "../fonts/museosanscyrl_700-webfont" ,null, null, ttf eot woff2 woff svg);
+@include font-face('museosanscyrl_900_italic', "../fonts/museosanscyrl_900_italic-webfont" ,null, null, ttf eot woff2 woff svg);
+@include font-face('museosanscyrl_900', "../fonts/museosanscyrl_900-webfont" ,null, null, ttf eot woff2 woff svg);
+
+$M100I: 'museosanscyrl_100_italic', $font-stack-helvetica;
+$M100: 'museosanscyrl_100', $font-stack-helvetica;
+$M300I: 'museosanscyrl_300_italic', $font-stack-helvetica;
+$M300: 'museosanscyrl_300', $font-stack-helvetica;
+$M500I: 'museosanscyrl_500_italic', $font-stack-helvetica;
+$M500: 'museosanscyrl_500', $font-stack-helvetica;
+$M700I: 'museosanscyrl_700_italic', $font-stack-helvetica;
+$M700: 'museosanscyrl_700', $font-stack-helvetica;
+$M900I: 'museosanscyrl_900_italic', $font-stack-helvetica;
+$M900: 'museosanscyrl_900', $font-stack-helvetica;

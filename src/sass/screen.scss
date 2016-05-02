@@ -1,2 +1,42 @@
 @import "../../bower_components/normalize.css/normalize.css";
 @import "lib/base";
+
+html {
+	text-size-adjust: 100%;
+	height: 100%;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	font-kerning: normal;
+	height: 100%;
+}
+* {
+	margin: 0;
+	outline: none;
+}
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+ul, ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+input {
+	border: none;
+	background-color: transparent;
+	padding: 0;
+	margin: 0;
+	outline: none;
+}
+button {
+	border: none;
+	outline: none;
+	background: transparent;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+}
