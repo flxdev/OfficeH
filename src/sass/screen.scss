@@ -40,3 +40,156 @@ button {
 a {
 	text-decoration: none;
 }
+.viewport {
+	height: 100%;
+}
+.out {
+	background-color: $white;
+	@include x-rem(margin, 0 auto -100px);
+	.push {
+		@include x-rem(height, 100px);
+	}
+	min-height: 100%;
+}
+.footer {
+	@include x-rem(margin, -100px auto 0);
+	@include x-rem(height, 100px);
+	@include x-rem(padding, 40px 0);
+	width: 100%;
+	background-color: $footerColor;
+	position: relative;
+	z-index: 3;
+	.copyright {
+		font-family: $M500;
+		@include x-rem(font-size, 12px);
+		text-transform: uppercase;
+		color: $white;
+		float: left;
+		@include x-rem(letter-spacing, 0.2px);
+		@include x-rem(margin-top, 5px);
+	}
+	.developer {
+		font-family: $M500;
+		@include x-rem(font-size, 12px);
+		color: $white;
+		float: right;
+		@include x-rem(margin-top, 5px);
+		a {
+			color: $white;
+		}
+	}
+	.overlay {
+		overflow: hidden;
+		text-align: center;
+		.callback {
+			cursor: pointer;
+			@include x-rem(margin-left, -24px);
+			span {
+				color: $white;
+				font-family: $M900;
+				text-transform: uppercase;
+				position: relative;
+				@include x-rem(font-size, 12px);
+				@include x-rem(letter-spacing, 1.5px);
+				.icon {
+					@include x-rem(width, 21px);
+					@include x-rem(height, 24px);
+					background-image: url(../img/icons/callback.png);
+					display: inline-block;
+					vertical-align: middle;
+					@include x-rem(margin-right, 15px);
+				}
+			}
+		}
+	}
+}
+.header {
+	@include x-rem(padding-top, 35px);
+	position: relative;
+	z-index: 3;
+	.logo {
+		@include x-rem(width, 118px);
+		@include x-rem(height, 118px);
+		background-image: url(../img/svg/happy.svg);
+		float: left;
+		background-size: cover;
+	}
+	.social {
+		float: right;
+		@include x-rem(margin-top, 34px);
+		.social-item {
+			@include x-rem(width, 28px);
+			@include x-rem(height, 28px);
+			float: left;
+			border-radius: 100%;
+			&:not(:first-child) {
+				@include x-rem(margin-left, 12px);
+			}
+			.icon {
+				width: 100%;
+				height: 100%;
+				display: block;
+				path {
+					fill: #A7A5AA;
+				}
+			}
+		}
+	}
+	.overlay {
+		text-align: center;
+		overflow: hidden;
+	}
+	.nav {
+		display: inline-block;
+		@include x-rem(margin, 33px 0 0 32px);
+		.nav-header {
+			font-size: 0;
+			li {
+				display: inline-block;
+				&:not(:last-child) {
+					@include x-rem(margin-right, 32px);
+				}
+				a {
+					font-family: $M500;
+					@include x-rem(font-size, 14px);
+					text-transform: uppercase;
+					line-height: 28px;
+					border-bottom: 1px solid $yellow;
+					@include x-rem(padding, 4px 0);
+					color: $turq;
+				}
+			}
+		}
+	}
+}
+.l {
+	@include x-rem(width, 1158px);
+	margin: 0 auto;
+	@include clearfix;
+}
+.wrapper {
+	position: relative;
+}
+.fullscreen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	.slide-bg {
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+	}
+	.swiper-pagination {
+		top: 50%;
+		@include x-rem(right, 50px);
+		left: auto;
+		bottom: auto;
+		width: auto;
+		.swiper-pagination-bullet {
+			display: block;
+			margin-bottom: 22px;
+		}
+	}
+}
