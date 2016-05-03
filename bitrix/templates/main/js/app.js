@@ -82,4 +82,34 @@ $(document).ready(function () {
 
 	})();
 
+
+	//map
+	if($('#map').length) {
+		mapInit();
+	}
+
+	function mapInit() {
+		ymaps.ready(function () {
+		  var myMap = new ymaps.Map('map', {
+				center: [55.873741, 37.434072],
+				zoom: 14,
+				controls: ['zoomControl']
+			}),
+			myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+				hintContent: 'пр-т Победителей 103',
+				balloonContent: 'пр-т Победителей 103'
+			},{
+				preset: 'islands#icon',
+				iconColor: '#ed4543'
+			});
+			var zoomControl = new ymaps.control.ZoomControl({
+		    options: {
+						size: "small"
+					}
+			});
+			myMap.geoObjects.add(myPlacemark).add(zoomControl);
+			myMap.behaviors.disable('scrollZoom');
+		});
+	};
+
 })
