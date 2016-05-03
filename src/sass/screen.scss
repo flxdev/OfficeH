@@ -300,6 +300,13 @@ a {
 		position: relative;
 		@include x-rem(margin, 0 0 95px);
 		width: 100%;
+		&.grid-layout-inner {
+			@include x-rem(padding, 37px 52px 0);
+			@include x-rem(margin, 0 0 67px 0);
+			.grid-row {
+				@include x-rem(padding, 0 46px);
+			}
+		}
 		.grid-columns{
 			width: 25%;
 			float: left;
@@ -377,7 +384,7 @@ a {
 		color: $grey;
 		@include x-rem(margin, 8px 0 15px 0);
 	}
-	a {
+	a, .section-head {
 		font-family: $M700;
 		@include x-rem(font-size, 20px);
 		color: $text;
@@ -591,5 +598,147 @@ a {
 				}
 			}
 		}
+	}
+}
+.grid-layout-inner {
+	.grid-row {
+		@include x-rem(padding, 0 46px);
+		@include x-rem(max-width, 958px);
+		width: 100%;
+		float: right;
+	}
+	.article-item {
+		@include x-rem(margin, 0 0 37px 0);
+	}
+	.data-post {
+		text-align: left;
+		@include x-rem(width, 144px);
+		padding: 0;
+	}
+	.section-name {
+		@include x-rem(font-size, 18px);
+		font-family: $M300;
+		color: #e8b750;
+		@include x-rem(letter-spacing, 0.7px);
+		@include x-rem(margin, 0 0 29px 0);
+	}
+	.section-head {
+		@include x-rem(font-size, 30px);
+		line-height: normal;
+		margin-bottom: 0;
+	}
+}
+.grid-row {
+	p {
+		font-family: $M300;
+		@include x-rem(font-size, 18px);
+		color: $pColor;
+		@include x-rem(letter-spacing, 0.73px);
+		@include x-rem(line-height, 30px);
+		@include x-rem(margin, 0 0 20px 0);
+	}
+	h2 {
+		@include x-rem(margin, 23px 0 25px);
+	}
+}
+figure {
+	@include x-rem(margin, 30px 0 49px);
+	display: inline-block;
+	img {
+		max-width: 100%;
+	}
+}
+blockquote {
+	font-family: "Times New Roman", $font-stack-helvetica;
+	font-weight: bold;
+	font-style: italic;
+	color: #e8b750;
+	display: inline-block;
+	@include x-rem(font-size, 20px);
+	@include x-rem(margin, 32px 0 52px);
+	@include x-rem(letter-spacing, 0.8px);
+	@include x-rem(padding, 32px 55px 40px 64px);
+	@include x-rem(line-height, 34px);
+	position: relative;
+	&::after {
+		position: absolute;
+		content: '';
+		height: 100%;
+		right: 0;
+		top: 0;
+		min-width: 910px;
+		border-top: 1px solid #e8b750;
+		border-bottom: 1px solid #e8b750;
+		z-index: -1;
+	}
+	&::before {
+		position: absolute;
+		content: '“';
+		height: 1px;
+		@include x-rem(left, -12px);
+		top: 28%;
+		color: #e8b750;
+		font-size: 100px;
+	}
+}
+h2 {
+	font-family: $M700;
+	font-weight: normal;
+	@include x-rem(font-size, 20px);
+	@include x-rem(letter-spacing, 0.8px);
+}
+.dash-list {
+	font-size: 0;
+	@include clearfix;
+	@include x-rem(margin, 0 0 20px 0);
+	li {
+		width: 43%;
+		display: inline-block;
+		vertical-align: top;
+		font-family: $M300;
+		@include x-rem(font-size, 16px);
+		color: $text;
+		@include x-rem(line-height, 25px);
+		@include x-rem(margin, 0 0 14px 0);
+		@include x-rem(letter-spacing, 0.6px);
+		position: relative;
+		&:nth-child(odd) {
+			margin-right: 13.5%;
+		}
+		&::before {
+			content: '';
+			@include x-rem(width, 29px);
+			height: 1px;
+			background-color: $yellow;
+			@include x-rem(left, -42px);
+			@include x-rem(top, 14px);
+			position: absolute;
+		}
+	}
+}
+.return {
+	text-align: center;
+	@include x-rem(padding, 29px 0);
+	@include clearfix;
+	display: inline-block;
+	width: 100%;
+}
+.back {
+	display: inline-block;
+	margin: 0 auto;
+	text-align: center;	
+	@include x-rem(width, 307px);
+	@include x-rem(height, 70px);
+	@include x-rem(line-height, 70px);
+	@include x-rem(border-radius, 35px);
+	background-color: $yellow;
+	span {
+		font-family: $M900;
+		@include x-rem(font-size, 12px);
+		color: $brown;
+		margin: 0 auto;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 1.6px;
 	}
 }
