@@ -828,12 +828,13 @@ h2 {
 	color: $blue;
 	@include x-rem(letter-spacing, 0.6px);
 	@include x-rem(margin, 0 0 23px 0);
-	display: inline-block;
+	display: block;
 }
 .callback {
-	display: block;
+	display: inline-block;
 	width: 223px;
 	background-color: $blue;
+	cursor: pointer;
 	@include x-rem(height, 35px);
 	@include x-rem(width, 223px);
 	@include x-rem(border-radius, 18px);
@@ -847,4 +848,179 @@ h2 {
 #map {
 	width: 100%;
 	height: 346px;
+}
+.popup__wrap {
+	background-color: rgba(0,0,0,.3);
+	bottom: 0;
+	display: none;
+	overflow-y: auto;
+	padding: 10px;
+	position: fixed;
+	right: 0;
+	text-align: center;
+	top: 0;
+	z-index: 100;
+	left: 0;
+	&::after {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+		width: 0;
+	}
+	&.is-visible {
+		.popup {
+			&.success, &.error {
+				&.is-open {
+					opacity: 1;
+					visibility: visible;
+					transform: translate(-50%,-50%) scale(1);
+				}
+			}
+			&.is-open {
+				opacity: 1;
+				visibility: visible;
+				transform: scale(1);
+			}
+		}
+	}
+	.popup {
+		background-color: $white;
+		border-radius: 4px;
+		height: auto;
+		position: relative;
+		text-align: left;
+		transform: scale(0.5);
+		transition: transform 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+		width: 100%;
+		max-width: 620px;
+		z-index: 2;
+		display: inline-block;
+		visibility: hidden;
+		vertical-align: middle;
+		opacity: 0;
+		padding: 73px 69px 47px;
+		&:after {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		&.success, &.error {
+			position: absolute;
+			text-align: center;
+			transform: translate(-50%,-50%) scale(0.5);
+			left: 50%;
+			top: 50%;
+			padding: 73px 69px;
+			max-width: 480px;
+		}
+	}
+	.popup__title {
+		font-family: $M700;
+		font-size: 30px;
+		color: #2c2732;
+		margin: 0 0 43px 0;
+	}
+	.popup-container {
+		text-align: center;
+	}
+	.success__area {
+		font-family: $M500;
+		font-size: 16px;
+		letter-spacing: 0.2px;
+		color: $text;
+		line-height: 1.6;
+	}
+	.popup__close {
+		width: 23px;
+		height: 23px;
+		position: absolute;
+		top: -30px;
+		right: -26px;
+		background-image: url(../img/icons/close.png);
+		display: block;
+		cursor: pointer;
+		&:hover {
+			
+		}
+	}
+}
+.field {
+	font-size: 0;
+	text-align: left;
+	@include clearfix;
+	margin-bottom: 30px;
+	.field__title {
+		font-family: $M300;
+		font-size: 16px;
+		letter-spacing: 0.3px;
+		width: 147px;
+		padding-top: 8px;
+		float: left;
+	}
+	.field__body {
+		float: right;
+		width: 335px;
+		position: relative;
+		&.has-error {
+			input, textarea {
+				border-color: #e40808;
+			}
+		}
+		input {
+			width: 100%;
+			height: 35px;
+			border: 1px solid rgba(0,0,0,.3);
+			border-radius: 4px;
+			font-family: $M300;
+			color: $text;
+			font-size: 16px;
+			padding: 0 15px;
+			letter-spacing: 0.4px;
+			transition: border-color 0.3s ease;
+			&:focus {
+				border-color: #f1c735;
+			}
+		}
+		textarea {
+			width: 100%;
+			height: 124px;
+			border: 1px solid rgba(0,0,0,.3);
+			border-radius: 4px;
+			resize: none;
+			font-family: $M300;
+			color: $text;
+			font-size: 16px;
+			padding: 10px 15px;
+			letter-spacing: 0.4px;
+			&:focus {
+				border-color: #f1c735;
+			}
+		}
+		p {
+			font-family: $M500;
+			font-size: 12px;
+			letter-spacing: 0.2px;
+			color: #9b9b9b;
+		}
+		.help-block {
+			display: inline-block;
+			font-family: $M500;
+			color: #e40808;
+			font-size: 12px;
+			margin-top: 8px;
+		}
+	}
+	.callback {
+		width: 100%;
+		display: inline-block;
+		margin: 17px 0;
+	}
+}
+sup {
+	font-size: 16px;
+	color: $yellow;
+	top: 0;
+}
+html.overlay body {
+	overflow: hidden;
 }

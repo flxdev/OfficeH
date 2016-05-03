@@ -112,4 +112,82 @@ $(document).ready(function () {
 		});
 	};
 
+	//validator
+	(function(){
+		var form_validate = $('.js-validate');
+		if (form_validate.length) {
+			form_validate.each(function () {
+				var form_this = $(this);
+				$.validate({
+					form : form_this,
+					// validateOnBlur : true,
+					borderColorOnError : false,
+					scrollToTopOnError : false,
+					onSuccess : function() {
+						if (form_this.hasClass('popups')) {
+							$('.popup').removeClass('is-open');
+							$('.success').addClass('is-open');
+							$('.popup').find('form').trigger('reset');
+							return false;
+						}				
+					}
+				});
+			});
+		}
+	})();
+
+	//popup
+	$('[data-popup]').each(function() {
+      var $this = $(this);
+
+      $this.on('click', function(e) {
+      	Popup($this.data('popup'));
+				return false;
+      });
+  });
+
+	function Popup(options){
+		var popupSelector = $('.' + options),
+				innerSelector = popupSelector.find('.popup'),
+				duration = 500,
+				close = popupSelector.find('.popup__close'),
+				html = $('html');
+
+		popupSelector
+			.fadeIn({
+				duration: duration,
+				complete: function(){
+					$(this).addClass('is-visible');
+				}
+			});
+
+		innerSelector.on('click', function(event){
+			event.stopPropagation();
+		});
+
+		close.add($('.popup .close, .popup__wrap')).on('click', function(){
+			if(!popupSelector.hasClass('is-visible')) return;
+
+			if($('.error').hasClass('is-open')) {
+				$('.error').removeClass('is-open');
+				$('.popup:first-child').addClass('is-open');
+				return false;
+			}
+
+			popupSelector
+				.removeClass("is-visible")
+				.delay(duration)
+				.fadeOut({
+					duration: duration,
+					complete: function(){
+						html.removeClass('overlay');
+						//$('.error').removeClass('is-open');
+						$('.success').removeClass('is-open');
+						$('.popup:first-child').addClass('is-open');
+					}
+				});
+			return false;
+		});
+	};
+
 })
