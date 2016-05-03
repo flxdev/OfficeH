@@ -11,22 +11,55 @@ $icon-home: x y offset_x offset_y width height total_width total_height image_pa
 At the bottom of this section, we provide information about the spritesheet itself
 $spritesheet: width height image $spritesheet-sprites;
 */
+$arrow-left-name: 'arrow-left';
+$arrow-left-x: 0px;
+$arrow-left-y: 0px;
+$arrow-left-offset-x: 0px;
+$arrow-left-offset-y: 0px;
+$arrow-left-width: 20px;
+$arrow-left-height: 35px;
+$arrow-left-total-width: 63px;
+$arrow-left-total-height: 59px;
+$arrow-left-image: 'sprite.png';
+$arrow-left: (0px, 0px, 0px, 0px, 20px, 35px, 63px, 59px, 'sprite.png', 'arrow-left', );
+$arrow-right-name: 'arrow-right';
+$arrow-right-x: 20px;
+$arrow-right-y: 0px;
+$arrow-right-offset-x: -20px;
+$arrow-right-offset-y: 0px;
+$arrow-right-width: 20px;
+$arrow-right-height: 35px;
+$arrow-right-total-width: 63px;
+$arrow-right-total-height: 59px;
+$arrow-right-image: 'sprite.png';
+$arrow-right: (20px, 0px, -20px, 0px, 20px, 35px, 63px, 59px, 'sprite.png', 'arrow-right', );
 $callback-name: 'callback';
 $callback-x: 0px;
-$callback-y: 0px;
+$callback-y: 35px;
 $callback-offset-x: 0px;
-$callback-offset-y: 0px;
+$callback-offset-y: -35px;
 $callback-width: 21px;
 $callback-height: 24px;
-$callback-total-width: 21px;
-$callback-total-height: 24px;
+$callback-total-width: 63px;
+$callback-total-height: 59px;
 $callback-image: 'sprite.png';
-$callback: (0px, 0px, 0px, 0px, 21px, 24px, 21px, 24px, 'sprite.png', 'callback', );
-$spritesheet-width: 21px;
-$spritesheet-height: 24px;
+$callback: (0px, 35px, 0px, -35px, 21px, 24px, 63px, 59px, 'sprite.png', 'callback', );
+$close-name: 'close';
+$close-x: 40px;
+$close-y: 0px;
+$close-offset-x: -40px;
+$close-offset-y: 0px;
+$close-width: 23px;
+$close-height: 23px;
+$close-total-width: 63px;
+$close-total-height: 59px;
+$close-image: 'sprite.png';
+$close: (40px, 0px, -40px, 0px, 23px, 23px, 63px, 59px, 'sprite.png', 'close', );
+$spritesheet-width: 63px;
+$spritesheet-height: 59px;
 $spritesheet-image: 'sprite.png';
-$spritesheet-sprites: ($callback, );
-$spritesheet: (21px, 24px, 'sprite.png', $spritesheet-sprites, );
+$spritesheet-sprites: ($arrow-left, $arrow-right, $callback, $close, );
+$spritesheet: (63px, 59px, 'sprite.png', $spritesheet-sprites, );
 
 /*
 The provided mixins are intended to be used with the array-like variables

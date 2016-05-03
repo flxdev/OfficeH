@@ -19,24 +19,32 @@ $(document).ready(function () {
 		}
 	})();
 
-	// isotope
-	if ($('.grid').length) {
-		isotopeSorts($('.grid-layout'));
+	// // isotope
+	// if ($('.grid').length) {
+	// 	isotopeSorts($('.grid-layout'));
+	// }
+
+	// function isotopeSorts(grid) {
+	// 	var $grid = grid.isotope({
+	// 		itemSelector: '.grid-item',
+	// 		percentPosition: true,
+	// 		category: '[data-category]',
+	// 		masonry: {
+	// 			columnWidth: '.grid-sizer'
+	// 		}
+	// 	});
+	// 	$('.btn-filter').on('click', function(){
+	// 		var fValue = $(this).data('filter');
+	// 		$grid.isotope({filter: fValue});
+	// 		$(this).addClass('is-checked').siblings().removeClass('is-checked');
+	// 	});
+	// };
+
+	//fancybox
+	if($('.grid-gallery').length) {
+		$('.grid-gallery').fancybox({
+			padding: 0
+		});
 	}
 
-	function isotopeSorts(grid) {
-		var $grid = grid.isotope({
-			itemSelector: '.grid-item',
-			percentPosition: true,
-			category: '[data-category]',
-			masonry: {
-				columnWidth: '.grid-sizer'
-			}
-		});
-		$('.btn-filter').on('click', function(){
-			var fValue = $(this).data('filter');
-			$grid.isotope({filter: fValue});
-			$(this).addClass('is-checked').siblings().removeClass('is-checked');
-		})
-	}
 })

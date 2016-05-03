@@ -175,6 +175,7 @@ a {
 .wrapper {
 	position: relative;
 	z-index: 3;
+	overflow: hidden;
 }
 #index {
 	.wrapper {
@@ -262,12 +263,13 @@ a {
 	font-weight: normal;
 	@include x-rem(letter-spacing, 1.9px);
 	text-align: center;
-	@include x-rem(margin, 0 0 50px 0);
+	@include x-rem(margin, 0 0 35px 0);
+	line-height: 1;
 }
 .grid {
 	.grid-nav {
 		@include x-rem(width, 768px);
-		@include x-rem(margin, 0 auto 40px);
+		@include x-rem(margin, 0 auto 50px);
 		text-align: center;
 		.button {
 			display: inline-block;
@@ -281,9 +283,9 @@ a {
 			letter-spacing: 2.1px;
 			margin-bottom: 15px;
 			&:not(:first-child) {
-				margin-left: 16px;
+				@include x-rem(margin-left, 9px);
 			}
-			&.is-checked {
+			&.is-active {
 				border-color: $yellow;
 				font-family: $M900;
 				color: $text;
@@ -295,18 +297,44 @@ a {
 		position: relative;
 		@include x-rem(margin, 0 0 95px);
 		width: 100%;
-		.grid-sizer {
-			width: 25%;
-		}
-		.grid-item {
+		.grid-columns{
 			width: 25%;
 			float: left;
+		}
+		.grid-gallery {
+			display: block;
+			padding: 1px;
+			width: 100%;
+			transition: box-shadow 0.3s ease, z-index 0.3s ease;
+			z-index: 2;
+			position: relative;
+			&:hover {
+				transition: box-shadow 0.3s ease, z-index 0.3s ease;
+				box-shadow: 0px 5px 30px 0px rgba(74, 63, 87, 0.24);
+				z-index: 4;
+				img {
+					filter: saturate(1);
+				}
+			}
 			img {
-				max-width: 100%;
 				display: block;
-				height: 100%;
-				padding: 1px;
+				width: 100%;
+				filter: saturate(0);
+				transition: filter 0.3s ease;
 			}
 		}
 	}
+}
+.fancybox-close {
+	background-image: url(../img/icons/close.png);
+}
+.fancybox-prev {
+	background-image: url(../img/icons/arrow-left.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+.fancybox-next {
+	background-image: url(../img/icons/arrow-right.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 }
