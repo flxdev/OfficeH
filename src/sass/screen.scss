@@ -1024,3 +1024,190 @@ sup {
 html.overlay body {
 	overflow: hidden;
 }
+.relation {
+	font-family: $M300;
+	@include x-rem(font-size, 18px);
+	color: $pColor;
+	@include x-rem(max-width, 730px);
+	margin: -3px auto;
+	text-align: center;
+	@include x-rem(line-height, 30px);
+	@include x-rem(letter-spacing, 0.75px);
+}
+.grid-layout {
+	&.accordions {
+		@include x-rem(margin-top, 65px);
+	}
+}
+.accordion {
+	.accordion-item {
+		border: 1px solid rgba(33,38,43,.1);
+		border-radius: 4px;
+		@include x-rem(padding, 31px 95px 15px);
+		margin-bottom: 31px;
+		transition: border-color 0.5s ease, box-shadow 0.5s ease;
+		position: relative;
+		overflow: hidden;
+		&:hover {
+			border-color: transparent;
+			box-shadow: 0px 5px 18px 0px rgba(74, 63, 87, 0.15);
+		}
+	}
+	.accordion-head {
+		position: relative;
+		@include x-rem(width, 250px);
+		@include x-rem(padding, 76px 43px);
+		float: left;
+		span {
+			font-family: $M900;
+			font-weight: normal;
+			color: $numb;
+			@include x-rem(font-size, 200px);
+			position: absolute;
+			@include x-rem(left, -9px);
+			@include x-rem(top, -32px);
+			z-index: -1;
+		}
+		.text {
+			font-family: $M700;
+			font-weight: normal;
+			@include x-rem(font-size, 20px);
+			@include x-rem(line-height, 28px);
+		}
+	}
+	.accordion-content {
+		@include x-rem(padding, 3px 5px 0 91px);
+		position: relative;
+		.dash-list {
+			li {
+				width: 100%;
+			}
+		}
+		.accordion-preview {
+			opacity: 1;
+			visibility: visible;
+			position: relative;
+			transition: opacity 0.7s ease, visibility 0.7s ease;
+			top: 0;
+			&.hide {
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+				top: 3px;
+			}
+		}
+		.accordion-main {
+			position: absolute;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.7s ease, visibility 0.7s ease;
+			top: 3px;
+			&.visible {
+				position: relative;
+				opacity: 1;
+				visibility: visible;
+				top: 0;
+			}
+		}
+	}
+	.accordion-toggle {
+		position: absolute;
+		width: 33px;
+		height: 33px;
+		display: block;
+		top: 23px;
+		right: 30px;
+		cursor: pointer;
+		transform: translateZ(0);
+		span {
+			width: 23px;
+			height: 23px;
+			border: 1px solid rgba(33,38,43,.1);
+			border-radius: 100%;
+			display: block;
+			position: relative;
+			transition: transform 0.5s ease, border-color 0.5s ease;
+			transform: rotate(0deg);
+			will-change: transform;
+			&::after {
+				width: 17px;
+				height: 1px;
+				background-color: rgba(33,38,43,.1);
+				content: '';
+				position: absolute;
+				top: 10px;
+				left: 2px;
+				transition: background-color 0.5s ease;
+			}
+			&::before {
+				width: 1px;
+				height: 17px;
+				background-color: rgba(33,38,43,.1);
+				content: '';
+				position: absolute;
+				top: 2px;
+				left: 10px;
+				transition: background-color 0.5s ease;
+			}
+		}
+		&:hover {
+			span {
+				border-color: #f1c735;
+				transform: rotate(-45deg);
+				&::after {
+					background-color: #f1c735;
+				}
+				&::before {
+					background-color: #f1c735;
+				}
+			}
+		}
+		&.active {
+			span {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}
+.number-list {
+	& > li {
+		counter-increment: number;
+		margin-bottom: 12px;
+		span {
+			font-family: $M700;
+			font-weight: normal;
+			@include x-rem(font-size, 16px);
+			color: #47424c;
+			letter-spacing: 0.65px;
+			display: inline-block;
+			margin-bottom: 13px;
+			position: relative;
+			text-indent: 20px;
+			line-height: 22px;
+		}
+		&::before {
+			content: counter(number) '. ';
+			font-family: $M700;
+			font-weight: normal;
+			@include x-rem(font-size, 16px);
+			color: #47424c;
+			letter-spacing: 0.6px;
+			position: absolute;
+			left: 0;
+		}
+	}
+	.dash-list {
+		margin-bottom: 0;
+		li {
+			padding-left: 30px;
+			margin-bottom: 9px;
+			@include x-rem(font-size, 14px);
+			display: inline-block;
+			letter-spacing: 0;
+			&::before {
+				left: 1px;
+				width: 19px;
+			}
+		}
+	}
+}

@@ -190,4 +190,36 @@ $(document).ready(function () {
 		});
 	};
 
+	//accordion
+	(function(){
+		var accordion = $('.accordion');
+		if (accordion.length) {
+			Accordion(accordion);
+		}
+		function Accordion(accordion) {
+			var item = accordion.find('.accordion-item');
+
+			item.each(function(){
+				var _ = $(this),
+					btn = _.find('.accordion-toggle'),
+					preview = _.find('.accordion-preview'),
+					main = _.find('.accordion-main');
+
+				btn.on('click', function(){
+					if(!$(this).hasClass('active')) {
+						$(this).addClass('active');
+						preview.addClass("hide");
+						main.addClass('visible')
+								//.slideDown(1000);
+					} else {
+						$(this).removeClass('active');
+							preview.removeClass("hide");
+							main.removeClass('visible')
+									//.slideUp(1000);
+					}
+				});
+			});
+		}
+	})();
+
 })
