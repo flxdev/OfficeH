@@ -222,4 +222,40 @@ $(document).ready(function () {
 		}
 	})();
 
+	//fullpage
+	(function(){
+		if($('.conception')) {
+			fullPage($('.fullpage'));
+		}
+
+		function fullPage(fullpage){
+			fullpage.fullpage({
+				verticalCentered: false,
+				scrollingSpeed: 1400,
+				onLeave: function(index, nextIndex, direction){
+					header(direction, nextIndex);
+				}
+			});
+		};
+
+		function header(direction, nextIndex) {
+			if(direction === 'down') {
+				$('.section').removeClass('up');
+				$('.section.active').next().addClass('down').siblings().removeClass('down');
+			} else {
+				$('.section').removeClass('down');
+				$('.section.active').prev().addClass('up').siblings().removeClass('up')
+			}
+			if(nextIndex !== 1) {
+				$('.header').addClass('no');
+				$('.menu').delay(700).addClass('is-active');
+			} else {
+				$('.header').delay(700).removeClass('no');
+				$('.menu').removeClass('is-active');
+				$('.menu__wrapper').removeClass('is-active');
+			}
+		}
+
+	})();
+
 })
