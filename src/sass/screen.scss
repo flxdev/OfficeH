@@ -439,27 +439,28 @@ a {
 	}
 }
 .menu {
-	max-width: 1158px;
+	@include x-rem(max-width, 1158px);
 	width: 100%;
-	height: 50px;
+	@include x-rem(height, 50px);
 	position: fixed;
 	margin: 0 auto;
 	height: 0;
 	z-index: 5;
-	top: 45px;
+	@include x-rem(top, 45px);
 	.menu-btn {
-		width: 50px;
-		height: 50px;
+		@include x-rem(width, 50px);
+		@include x-rem(height, 50px);
 		border: 1px solid rgba(0,0,0,.3);
 		float: right;
 		border-radius: 100%;
 		cursor: pointer;
-		opacity: 0;		visibility: hidden;
+		opacity: 0;
+		visibility: hidden;
 		transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
 		transform: scale(0.5);
 		span {
-			width: 22px;
-			height: 2px;
+			@include x-rem(width, 22px);
+			@include x-rem(height, 2px);
 			background-color: $text;
 			display: inline-block;
 			vertical-align: middle;
@@ -468,18 +469,18 @@ a {
 				content: '';
 				position: absolute;
 				left: 0;
-				top: -7px;
+				@include x-rem(top, -7px);
 				width: 100%;
-				height: 2px;
+				@include x-rem(height, 2px);
 				background-color: $text;
 			}
 			&::before {
 				content: '';
 				position: absolute;
 				left: 0;
-				bottom: -7px;
+				@include x-rem(bottom, -7px);
 				width: 100%;
-				height: 2px;
+				@include x-rem(height, 2px);
 				background-color: $text;
 			}
 		}
@@ -498,7 +499,7 @@ a {
 	right: 0;
 	top: 0;
 	bottom: 0;
-	width: 370px;
+	@include x-rem(width, 370px);
 	background-color: $yellow;
 	z-index: 15;
 	transform: translateX(100%);
@@ -508,7 +509,7 @@ a {
 	}
 	.tooper {
 		text-align: right;
-		padding: 54px 38px 54px 75px;
+		@include x-rem(padding, 54px 38px 54px 75px);
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -516,17 +517,17 @@ a {
 		.phone {
 			display: inline-block;
 			font-family: $M300;
-			font-size: 16px;
+			@include x-rem(font-size, 16px);
 			color: $text;
 			letter-spacing: 0.6px;
 		}
 	}
 	.close__menu {
 		position: absolute;
-		top: 47px;
-		left: 41px;
-		width: 32px;
-		height: 32px;
+		@include x-rem(top, 47px);
+		@include x-rem(left, 41px);
+		@include x-rem(width, 32px);
+		@include x-rem(height, 32px);
 		display: block;
 		background-image: url(../img/icons/close-menu.png);
 		background-size: cover;
@@ -535,7 +536,7 @@ a {
 	}
 	.menu__case {
 		bottom: 0;
-		margin: 78px 0 0;
+		@include x-rem(margin, 78px 0 0);
 		overflow-y: auto;
 		position: absolute;
 		right: 0;
@@ -546,22 +547,22 @@ a {
 	}
 	.navi__container {
 		height: 100%;
-		min-height: 730px;
-		padding: 182px 0 113px 38px;
+		@include x-rem(min-height, 730px);
+		@include x-rem(padding, 182px 0 113px 38px);
 		@include rh(800) {
-			padding: 60px 0 113px 38px;
-			min-height: 590px;
+			@include x-rem(padding, 60px 0 113px 38px);
+			@include x-rem(min-height, 590px);
 		}
 		position: relative;
 		.navigation {
 			li {
-				margin-bottom: 25px;
+				@include x-rem(margin-bottom, 25px);
 				a {
 					font-family: $M500;
-					font-size: 30px;
+					@include x-rem(font-size, 30px);
 					color: $text;
 					// padding: 1px 0;
-					letter-spacing: 0.4px;
+					@include x-rem(letter-spacing, 0.4px);
 					display: inline-block;
 					width: 100%;
 					span {
@@ -576,21 +577,21 @@ a {
 			}
 		}
 		.menu__footer {
-			bottom: 84px;
-			height: 28px;
-			left: 22px;
+			@include x-rem(bottom, 84px);
+			@include x-rem(height, 28px);
+			@include x-rem(left, 28px);
 			position: absolute;
 			right: 0;
 			@include rh(800) {
-				bottom: 30px;
+				@include x-rem(bottom, 30px);
 			}
 			.social {
 				float: left;
 				margin-top: 0;
 				.social-item {
-					width: 28px;
-					height: 28px;
-					margin-left: 16px;
+					@include x-rem(width, 28px);
+					@include x-rem(height, 28px);
+					@include x-rem(margin-left, 16px);
 					.icon {
 						path {
 							fill: $text;
@@ -797,8 +798,8 @@ h2 {
 }
 .contacts-inner {
 	img {
-		max-width: 512px;
-		margin-right: 75px;
+		@include x-rem(max-width, 512px);
+		@include x-rem(margin, 0 75px 0 0);
 		float: left;
 	}
 }
@@ -849,13 +850,14 @@ h2 {
 #map {
 	width: 100%;
 	height: 346px;
+
 }
 .popup__wrap {
 	background-color: rgba(0,0,0,.3);
 	bottom: 0;
 	display: none;
 	overflow-y: auto;
-	padding: 10px;
+	@include x-rem(padding, 10px);
 	position: fixed;
 	right: 0;
 	text-align: center;
@@ -894,13 +896,13 @@ h2 {
 		transform: scale(0.5);
 		transition: transform 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
 		width: 100%;
-		max-width: 620px;
+		@include x-rem(max-width, 620px);
 		z-index: 2;
 		display: inline-block;
 		visibility: hidden;
 		vertical-align: middle;
 		opacity: 0;
-		padding: 73px 69px 47px;
+		@include x-rem(padding, 73px 69px 47px);
 		&:after {
 			display: inline-block;
 			vertical-align: middle;
@@ -911,33 +913,34 @@ h2 {
 			transform: translate(-50%,-50%) scale(0.5);
 			left: 50%;
 			top: 50%;
-			padding: 73px 69px;
-			max-width: 480px;
+			@include x-rem(padding, 73px 69px);
+			@include x-rem(max-width, 480px);
 		}
 	}
 	.popup__title {
 		font-family: $M700;
-		font-size: 30px;
+		@include x-rem(font-size, 30px);
 		color: #2c2732;
-		margin: 0 0 43px 0;
+		@include x-rem(margin, 0 0 43px 0);
 	}
 	.popup-container {
 		text-align: center;
 	}
 	.success__area {
 		font-family: $M500;
-		font-size: 16px;
-		letter-spacing: 0.2px;
+		@include x-rem(font-size, 16px);
+		@include x-rem(letter-spacing, 0.2px);
 		color: $text;
 		line-height: 1.6;
 	}
 	.popup__close {
-		width: 23px;
-		height: 23px;
+		@include x-rem(width, 23px);
+		@include x-rem(height, 23px);
 		position: absolute;
-		top: -30px;
-		right: -26px;
+		@include x-rem(top, -30px);
+		@include x-rem(right, -26px);
 		background-image: url(../img/icons/close.png);
+		background-size: cover;
 		display: block;
 		cursor: pointer;
 		&:hover {
@@ -949,18 +952,18 @@ h2 {
 	font-size: 0;
 	text-align: left;
 	@include clearfix;
-	margin-bottom: 30px;
+	@include x-rem(margin, 0 0 30px 0);
 	.field__title {
 		font-family: $M300;
-		font-size: 16px;
-		letter-spacing: 0.3px;
-		width: 147px;
-		padding-top: 8px;
+		@include x-rem(font-size, 16px);
+		@include x-rem(letter-spacing, 0.3px);
+		@include x-rem(width, 147px);
+		@include x-rem(padding, 8px 0 0 );
 		float: left;
 	}
 	.field__body {
 		float: right;
-		width: 335px;
+		@include x-rem(width, 335px);
 		position: relative;
 		&.has-error {
 			input, textarea {
@@ -969,14 +972,14 @@ h2 {
 		}
 		input {
 			width: 100%;
-			height: 35px;
+			@include x-rem(height, 35px);
 			border: 1px solid rgba(0,0,0,.3);
 			border-radius: 4px;
 			font-family: $M300;
 			color: $text;
-			font-size: 16px;
-			padding: 0 15px;
-			letter-spacing: 0.4px;
+			@include x-rem(font-size, 16px);
+			@include x-rem(padding, 0 15px);
+			@include x-rem(letter-spacing, 0.4px);
 			transition: border-color 0.3s ease;
 			&:focus {
 				border-color: #f1c735;
@@ -984,41 +987,41 @@ h2 {
 		}
 		textarea {
 			width: 100%;
-			height: 124px;
+			@include x-rem(height, 124px);
 			border: 1px solid rgba(0,0,0,.3);
 			border-radius: 4px;
 			resize: none;
 			font-family: $M300;
 			color: $text;
-			font-size: 16px;
-			padding: 10px 15px;
-			letter-spacing: 0.4px;
+			@include x-rem(font-size, 16px);
+			@include x-rem(padding, 10px 15px);
+			@include x-rem(letter-spacing, 0.4px);
 			&:focus {
 				border-color: #f1c735;
 			}
 		}
 		p {
 			font-family: $M500;
-			font-size: 12px;
-			letter-spacing: 0.2px;
+			@include x-rem(font-size, 12px);
+			@include x-rem(letter-spacing, 0.2px);
 			color: #9b9b9b;
 		}
 		.help-block {
 			display: inline-block;
 			font-family: $M500;
 			color: #e40808;
-			font-size: 12px;
-			margin-top: 8px;
+			@include x-rem(font-size, 12px);
+			@include x-rem(margin, 8px 0 0);
 		}
 	}
 	.callback {
 		width: 100%;
 		display: inline-block;
-		margin: 17px 0;
+		@include x-rem(margin, 17px 0);
 	}
 }
 sup {
-	font-size: 16px;
+	@include x-rem(font-size, 16px);
 	color: $yellow;
 	top: 0;
 }
@@ -1233,8 +1236,101 @@ html.overlay body {
 	}
 }
 .fullpage {
-	.section {
-		@include x-rem(padding, 154px 0);
+	.section {		
+		opacity: 0;
+		transition: opacity 0.9s ease;
+		// @include x-rem(padding, 154px 0);
+		&.active {
+			opacity: 1;
+			transition: opacity 1.9s ease 0.3s;
+		}
+		.footer {
+			margin: 0;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+		}
+		.grid-layout {
+			margin: 0;
+		}
+	}
+}
+.navi {
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	@include x-rem(right, 50px);
+	.navi-item {
+		text-align: right;
+		position: relative;
+		@include x-rem(padding, 0 33px 17px 0);
+		display: block;
+		@include clearfix;
+		&::after {
+			content: '';
+			@include x-rem(width, 8px);
+			@include x-rem(height, 8px);
+			border: 1px solid rgba(0,0,0,.3);
+			border-radius: 100%;
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 4px;
+			background-color: $white;
+			transition: border-color 0.3s ease, background-color 0.3s ease;
+		}
+		.navi-head {
+			font-family: $M500;
+			color: $text;
+			@include x-rem(font-size, 12px);
+			opacity: 0.5;
+			transition: opacity 0.3s ease, color 0.3s ease;
+			display: block;
+		}
+		.navi-descr {
+			overflow: hidden;
+			height: 0;
+			transition: height 0.7s ease;
+			.navi-descr__inner {
+				border: 1px solid rgba(74,63,87,.41);
+				border-radius: 4px;
+				@include x-rem(width, 223px);
+				display: inline-block;
+				text-align: left;
+				@include x-rem(margin, 16px 0 5px);
+				@include x-rem(padding, 16px 19px 17px);
+				background-color: $white;
+			}
+			p {
+				font-family: $M300;
+				@include x-rem(font-size, 12px);
+				color: #47424c;
+				@include x-rem(margin, 0 0 5px 0);
+				@include x-rem(line-height, 18px);
+			}
+		}
+		&.active {
+			&::after {
+				border-color: $blue;
+				background-color: $blue;
+			}
+			.navi-head {
+				opacity: 1;
+			}
+			.navi-descr {
+				@include x-rem(height, 204px);
+			}
+		}
+		&:hover {
+			&::after {
+				border-color: $pLink;
+				background-color: $pLink;
+			}
+			.navi-head {
+				opacity: 1;
+				color: $pLink;
+			}
+		}
 	}
 }
 .scheme {
@@ -1257,9 +1353,9 @@ html.overlay body {
 				bottom: 0;
 			}
 			.scheme-item {
-				margin-top: 23px;
+				@include x-rem(margin, 23px 0 0);
 				&:not(:first-child) {
-					margin-top: 32px;
+					@include x-rem(margin, 32px 0 0);
 				}
 				.scheme-container {
 					text-align: right;
@@ -1267,21 +1363,20 @@ html.overlay body {
 						&::after {
 							background-image: url(../img/icons/line-left.png);
 							right: 0;
-							top: 27px;
+							@include x-rem(top, 27px);
 						}
 					}
 					.text {
-						padding-right: 25px;
+						@include x-rem(padding, 0 25px 0 0);
 					}
 				}
 			}
 		}
 		&:last-of-type {
 			.scheme-item {
-				margin-top: 68px;
-				margin-left: -3px;
+				@include x-rem(margin, 68px 0 0 -3px);
 				&:not(:first-child) {
-					margin-top: 32px;
+					@include x-rem(margin, 32px 0 0 -3px);
 				}
 				.scheme-container {
 					text-align: left;
@@ -1289,14 +1384,14 @@ html.overlay body {
 						&::after {
 							background-image: url(../img/icons/line-right.png);
 							left: 0;
-							top: 27px;
+							@include x-rem(top, 27px);
 						}
 						span {
 							float: right;
 						}
 					}
 					.text {
-						padding-left: 25px;
+						@include x-rem(padding, 0 0 0 25px);
 					}
 				}
 			}
@@ -1304,20 +1399,20 @@ html.overlay body {
 	}
 	.scheme-container {
 		position: relative;
-		min-height: 72px;
+		@include x-rem(min-height, 72px);
 		display: table;
 		width: 100%;
 		.icon {
-			width: 113px;
-			height: 72px;
+			@include x-rem(width, 113px);
+			@include x-rem(height, 72px);
 			display: block;
 			position: relative;
 			display: table-cell;
 			vertical-align: middle;
 			&::after {
 				content: '';
-				width: 41px;
-				height: 7px;
+				@include x-rem(width, 41px);
+				@include x-rem(height, 7px);
 				position: absolute;
 			}
 			&.scheme-1 {
@@ -1341,8 +1436,8 @@ html.overlay body {
 				}
 			}
 			span {
-				width: 72px;
-				height: 72px;
+				@include x-rem(width, 72px);
+				@include x-rem(height, 72px);
 				display: block;
 				background-size: cover;
 			}
@@ -1352,10 +1447,294 @@ html.overlay body {
 			font-weight: normal;
 			@include x-rem(font-size, 20px);
 			color: #2c2732;
-			line-height: 29px;			
-			max-width: 290px;
+			@include x-rem(line-height, 29px);
+			@include x-rem(max-width, 290px);
 			display: table-cell;
 			vertical-align: middle;
+		}
+	}
+}
+.next-stage {
+	position: absolute;
+	@include x-rem(bottom, 54px);
+	@include x-rem(width, 100px);
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	cursor: pointer;
+	.stage-text {
+		font-family: $M500;
+		@include x-rem(font-size, 12px);
+		color: $text;
+		@include x-rem(padding, 0 0 15px 0);
+	}
+	.stage-arrow {
+		@include x-rem(width, 22px);
+		@include x-rem(height, 22px);
+		border-bottom: 2px solid $text;
+		border-right: 2px solid $text;
+		transform: rotate(45deg);
+		display: inline-block;
+	}
+}
+.room {
+	position: relative;
+	.room-scheme {
+		@include x-rem(max-width, 816px);
+		margin: 0 auto;
+		position: relative;
+		img {
+			max-width: 100%;
+		}
+	}
+	.points {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		.points-item {
+			position: absolute;
+			cursor: pointer;
+			.icon {
+				@include x-rem(width, 18px);
+				@include x-rem(height, 18px);
+				div {
+					@include x-rem(width, 18px);
+					@include x-rem(height, 18px);
+					display: block;
+					path {
+						transition: fill 0.3s ease;
+						fill: #ffd542;
+					}
+				}
+				&:hover {
+					div {
+						path {
+							fill: #ebc236
+						}
+					}
+					& + .points-infobox {
+						opacity: 1;
+						visibility: visible;
+						transform: translate(0, 0);
+					}
+				}
+			}
+		}
+		.points-infobox {
+			position: absolute;
+			bottom: 100%;
+			margin-bottom: 6px;
+			@include x-rem(margin, 0 0 6px 0);
+			@include x-rem(width, 202px);
+			@include x-rem(left, -92px);
+			opacity: 0;
+			visibility: hidden;
+			transform: translate(0, -10px);
+			transition: all 0.3s ease;
+			user-select: none;
+			pointer-events: none;
+			.points-infobox__inner {
+				background-color: $white;
+				@include x-rem(padding, 15px 19px);
+				box-shadow: 0 5px 32px rgba(74,63,87,.19);
+				border-radius: 5px;
+				text-align: center;
+				p {
+					font-family: $M300;
+					font-size: 16px;
+					@include x-rem(font-size, 16px);
+					color: #47424c;
+				}
+			}
+		}
+	}
+}
+.creation {
+	@include x-rem(max-width, 784px);
+	margin: 0 auto;
+	.creation-title {
+		font-family: $M700;
+		@include x-rem(font-size, 20px);
+		@include x-rem(line-height, 30px);
+		@include x-rem(margin, 0 0 39px 0);
+		text-align: center;
+	}
+	.creation-points {
+		position: relative;
+		@include x-rem(left, 67px);
+		.creation-list {
+			font-size: 0;
+			li {
+				width: 50%;
+				display: inline-block;
+				font-family: $M300;
+				@include x-rem(font-size, 16px);
+				@include x-rem(line-height, 25px);
+				@include x-rem(padding, 0 0 0 39px);
+				@include x-rem(margin, 0 0 18px 0);
+				@include x-rem(letter-spacing, 0.7px);
+				color: $pColor;
+				position: relative;
+				&::before {
+					content: '';
+					@include x-rem(width, 24px);
+					@include x-rem(height, 18px);
+					background-image: url(../img/icons/check.png);
+					background-size: cover;
+					background-repeat: no-repeat;
+					position: absolute;
+					left: 0;
+					@include x-rem(top, 6px);
+				}
+			}
+		}
+	}
+}
+.section {
+	&.stage-2 {
+		.points-item {
+			&.point-1 {
+				left: 49.1%;
+				top: 50.9%;
+			}
+		}
+	}
+	&.stage-3 {
+		.points-item {
+			&.point-1 {
+				left: 16.1%;
+				top: 24.2%;
+			}
+			&.point-2 {
+				left: 48.45%;
+				top: 23.2%;
+			}
+			&.point-3 {
+				right: 17.1%;
+				top: 25.9%;
+			}
+			&.point-4 {
+				right: 22.5%;
+				top: 30.9%;
+			}
+			&.point-5 {
+				right: 49.5%;
+				top: 36.9%;
+			}
+			&.point-6 {
+				left: 16.1%;
+				top: 47.2%;
+			}
+			&.point-7 {
+				right: 18.1%;
+				top: 46.2%;
+			}
+			&.point-8 {
+				bottom: 37.3%;
+				right: 49.4%;
+			}
+			&.point-9 {
+				bottom: 23.6%;
+				right: 49.1%;
+			}
+			&.point-10 {
+				bottom: 17.6%;
+				left: 12.8%;
+			}
+			&.point-11 {
+				bottom: 14.3%;
+				left: 25.4%;
+			}
+			&.point-12 {
+				bottom: 13.3%;
+				right: 16.2%;
+			}
+		}
+	}
+	&.stage-4 {
+		.points-item {
+			&.point-1 {
+				left: 49%;
+				top: 17.1%;
+			}
+			&.point-2 {
+				right: 24.7%;
+				top: 37.9%;
+			}
+			&.point-3 {
+				right: 3.1%;
+				top: 50.4%;
+			}
+			&.point-4 {
+				bottom: 36.6%;
+				right: 31.5%;
+			}
+			&.point-5 {
+				bottom: 29%;
+				right: 10.4%;
+			}
+			&.point-6 {
+				bottom: 25.2%;
+				left: 52.1%;
+			}
+			&.point-7 {
+				bottom: 27.8%;
+				left: 29.1%;
+			}
+			&.point-8 {
+				bottom: 14.5%;
+				left: 14.8%;
+			}
+			&.point-9 {
+				bottom: 9.9%;
+				left: 23.1%;
+			}
+		}
+	}
+	&.stage-5 {
+		.points-item {
+			&.point-1 {
+				left: 6.2%;
+				top: 4.1%
+			}
+			&.point-2 {
+				right: 49.2%;
+				top: 13.4%;
+			}
+			&.point-3 {
+				right: 48%;
+				top: 30.4%;
+			}
+			&.point-4 {
+				right: 33.4%;
+				top: 38.5%;
+			}
+			&.point-5 {
+				right: 24.8%;
+				top: 38%;
+			}
+			&.point-6 {
+				bottom: 47.1%;
+				right: 3.2%;
+			}
+			&.point-7 {
+				bottom: 36.8%;
+				right: 34%;
+			}
+			&.point-8 {
+				bottom: 28.9%;
+				right: 10.6%;
+			}
+			&.point-9 {
+				bottom: 25.9%;
+				left: 49.1%;
+			}
+			&.point-10 {
+				bottom: 50.4%;
+				left: 22.1%;
+			}
 		}
 	}
 }

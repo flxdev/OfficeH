@@ -58,6 +58,7 @@ $(document).ready(function () {
 			close = mMenu.find('.close__menu');
 
 		btn.on('click', function(){
+			$(this).removeClass('is-active');
 			mMenu.addClass('is-active');
 		});
 
@@ -67,6 +68,7 @@ $(document).ready(function () {
 
 		$(document).add(close).on('click', function(){
 			mMenu.removeClass('is-active');
+			btn.addClass('is-active');
 		});
 
 		$(document).scroll(function() {    
@@ -230,13 +232,19 @@ $(document).ready(function () {
 
 		function fullPage(fullpage){
 			fullpage.fullpage({
-				verticalCentered: false,
+				//verticalCentered: false,
 				scrollingSpeed: 1400,
+				menu: '.navi',
+				anchors:['concept', 'consulting', 'design', 'creature', 'care', 'company'],
 				onLeave: function(index, nextIndex, direction){
 					header(direction, nextIndex);
 				}
 			});
 		};
+
+		$('.next-stage').on('click', function(){
+			$.fn.fullpage.moveTo(2);
+		});
 
 		function header(direction, nextIndex) {
 			if(direction === 'down') {
@@ -254,7 +262,7 @@ $(document).ready(function () {
 				$('.menu').removeClass('is-active');
 				$('.menu__wrapper').removeClass('is-active');
 			}
-		}
+		};
 
 	})();
 
