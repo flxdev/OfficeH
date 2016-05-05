@@ -311,14 +311,20 @@ a {
 		.grid-columns{
 			width: 25%;
 			float: left;
+			&:not(:last-child) {
+				padding-right: 1px;
+			}
 		}
 		.grid-gallery {
 			display: block;
-			padding: 1px;
-			width: 100%;
+			overflow: hidden;
+			max-width: 100%;
 			transition: box-shadow 0.3s ease, z-index 0.3s ease;
 			z-index: 2;
 			position: relative;
+			&:not(:last-child) {
+				margin-bottom: 1px;
+			}
 			&:hover {
 				transition: box-shadow 0.3s ease, z-index 0.3s ease;
 				box-shadow: 0px 5px 30px 0px rgba(74, 63, 87, 0.24);
@@ -329,9 +335,34 @@ a {
 			}
 			img {
 				display: block;
-				width: 100%;
 				filter: saturate(0);
 				transition: filter 0.3s ease;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			&.h177 {
+				@include x-rem(height, 177px);
+			}
+			&.h234 {
+				@include x-rem(height, 234px);
+			}
+			&.h354 {
+				@include x-rem(height, 354px);
+			}
+			&.h443 {
+				@include x-rem(height, 443px);
+			}
+			&.vertical {
+				img {
+					max-width: 100%;
+				}
+			}
+			&.horizontal {
+				img {
+					max-height: 100%;
+				}
 			}
 		}
 	}
