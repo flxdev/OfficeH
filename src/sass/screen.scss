@@ -6,6 +6,9 @@ html {
 	text-size-adjust: 100%;
 	height: 100%;
 	font-size: 16px;
+	@include r(1170) {
+		font-size: 13px;
+	}
 }
 body {
 	-webkit-font-smoothing: antialiased;
@@ -679,6 +682,7 @@ figure {
 	display: inline-block;
 	img {
 		max-width: 100%;
+		width: 100%;
 	}
 }
 blockquote {
