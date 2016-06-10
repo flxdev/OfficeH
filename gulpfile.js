@@ -108,7 +108,7 @@ gulp.task('sprite:build', function() {
                 cssName: '_sprite.scss',
                 cssFormat: 'scss',
                 algorithm: 'binary-tree',
-                cssTemplate: 'scss.template.mustache',
+                // cssTemplate: 'scss.template.mustache',
                 cssVarMap: function(sprite) {
                     sprite.name = sprite.name
                 }

@@ -7,38 +7,63 @@ $(document).ready(function () {
 
 	// swiper slider
 	(function(){
-		var swiper = $('.fullscreen');
-		if(swiper.length) {
-			var swiper = new Swiper(swiper, {
-				pagination: '.swiper-pagination',
-				paginationClickable: true,
-				effect: "fade",
+		var interleaveOffset = -.5,
+			interleaveEffect = {  
+			onProgress: function(e, t) {
+				for (var n = 0; n < e.slides.length; n++) {
+					var o, i, a = e.slides[n];
+					t = a.progress, t > 0 ? (o = t * e.width, i = o * interleaveOffset) : (i = Math.abs(t * e.width) * interleaveOffset, o = 0), -1 != (navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf("OPR")) ? ($(a).css({
+						transform: "translate3d(" + o + "px,0,0)"
+					}), $(a).find(".slide-bg").css({
+						transform: "translate3d(" + i + "px,0,0)"
+					})) : -1 != navigator.userAgent.indexOf("Chrome") ? ($(a).css({
+						transform: "translate3d(" + o + "px,0,0)"
+					}), $(a).find(".slide-bg").css({
+						transform: "translate3d(" + i + "px,0,0)"
+					})) : -1 != navigator.userAgent.indexOf("Safari") ? ($(a).css({
+						transform: "translate3d(" + o + "px,0,0)"
+					}), $(a).find(".slide-bg").css({
+						transform: "translate3d(" + i + "px,0,0)"
+					})) : -1 != navigator.userAgent.indexOf("Firefox") || -1 != navigator.userAgent.indexOf("MSIE") || 1 == !!document.documentMode
+				}
+			},
+			onTouchStart: function(e) {
+				for (var t = 0; t < e.slides.length; t++) $(e.slides[t]).css({
+					transition: ""
+				})
+			},
+			onSetTransition: function(e, t) {
+				for (var n = 0; n < e.slides.length; n++) $(e.slides[n]).find(".slide-bg").andSelf().css({
+					transition: t + "ms"
+				})
+			}
+			},
+			swiperOptions = {
+				loop: !0,
 				speed: 1700,
-				autoplay: 1700
-			});
-		}
+				// grabCursor: !0,
+				watchSlidesProgress: !0,
+				centeredSlides: !0,
+				// mousewheelControl: !0,
+				autoplay: 6e3,
+				autoplayDisableOnInteraction: !1,
+				pagination: '.swiper-pagination',
+				paginationClickable: true
+			};
+
+		var swiper = $('.fullscreen');
+		swiperOptions = $.extend(swiperOptions, interleaveEffect);
+		var swipers = new Swiper(swiper, swiperOptions);
+		// if(swiper.length) {
+		// 	var swiper = new Swiper(swiper, {
+		// 		pagination: '.swiper-pagination',
+		// 		paginationClickable: true,
+		// 		effect: "fade",
+		// 		speed: 1700,
+		// 		autoplay: 1700
+		// 	});
+		// }
 	})();
-
-	// // isotope
-	// if ($('.grid').length) {
-	// 	isotopeSorts($('.grid-layout'));
-	// }
-
-	// function isotopeSorts(grid) {
-	// 	var $grid = grid.isotope({
-	// 		itemSelector: '.grid-item',
-	// 		percentPosition: true,
-	// 		category: '[data-category]',
-	// 		masonry: {
-	// 			columnWidth: '.grid-sizer'
-	// 		}
-	// 	});
-	// 	$('.btn-filter').on('click', function(){
-	// 		var fValue = $(this).data('filter');
-	// 		$grid.isotope({filter: fValue});
-	// 		$(this).addClass('is-checked').siblings().removeClass('is-checked');
-	// 	});
-	// };
 
 	//fancybox
 	if($('.grid-gallery').length) {
@@ -198,25 +223,28 @@ $(document).ready(function () {
 			Accordion(accordion);
 		}
 		function Accordion(accordion) {
-			var item = accordion.find('.accordion-item');
+			var item = accordion.find('.accordion-item'),
+			less = '<p>Скрыть</p>',
+			must = '<p>Читать больше</p>';
 
 			item.each(function(){
 				var _ = $(this),
 					btn = _.find('.accordion-toggle'),
 					preview = _.find('.accordion-preview'),
-					main = _.find('.accordion-main');
+					main = _.find('.accordion-main'),
+					text = _.find('.accordion-more');
 
-				btn.on('click', function(){
-					if(!$(this).hasClass('active')) {
-						$(this).addClass('active');
+				_.on('click', function(){
+					if(!btn.hasClass('active')) {
+						btn.addClass('active');
 						preview.addClass("hide");
-						main.addClass('visible')
-								//.slideDown(1000);
+						main.addClass('visible');
+						text.empty().append(less);
 					} else {
-						$(this).removeClass('active');
-							preview.removeClass("hide");
-							main.removeClass('visible')
-									//.slideUp(1000);
+						btn.removeClass('active');
+						preview.removeClass("hide");
+						main.removeClass('visible');
+						text.empty().append(must);
 					}
 				});
 			});

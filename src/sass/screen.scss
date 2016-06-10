@@ -122,6 +122,7 @@ a {
 		background-image: url(../img/svg/happy.svg);
 		float: left;
 		background-size: cover;
+		transition: all 0.5s ease 0s;
 	}
 	.overlay {
 		text-align: center;
@@ -155,7 +156,7 @@ a {
 }
 .social {
 	float: right;
-	@include x-rem(padding-top, 34px);
+	// @include x-rem(padding-top, 34px);
 	.social-item {
 		@include x-rem(width, 28px);
 		@include x-rem(height, 28px);
@@ -169,8 +170,28 @@ a {
 			height: 100%;
 			display: block;
 			path {
-				fill: #A7A5AA;
+				fill: #ffffff;
 			}
+		}
+	}
+}
+.language {
+	float: right;
+	font-size: 0;
+	@include x-rem(margin-top, 37px);
+	transition: all 0.5s ease 0s;
+	.language-item {
+		display: inline-block;
+		font-family: $M300;
+		@include x-rem(font-size, 14px);
+		color: $turq;
+		text-transform: uppercase;
+		&:not(:last-child) {
+			margin-right: 15px;
+		}
+		&.active {
+			font-family: $M500;
+			color: $pLink;
 		}
 	}
 }
@@ -199,11 +220,17 @@ a {
 	left: 0;
 	width: 100%;
 	height: 100%;
+	.swiper-slide {
+		overflow: hidden;
+	}
 	.slide-bg {
 		width: 100%;
 		height: 100%;
 		background-size: cover;
 		background-position: 50% 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 	.swiper-pagination {
 		top: 45%;
@@ -283,7 +310,7 @@ a {
 			@include x-rem(padding, 4px 0);
 			border-bottom: 1px solid transparent;
 			color: $gridNav;
-			font-family: $M700;
+			font-family: $M500;
 			text-transform: uppercase;
 			@include x-rem(font-size, 12px);
 			cursor: pointer;
@@ -314,9 +341,10 @@ a {
 		.grid-columns{
 			width: 25%;
 			float: left;
-			&:not(:last-child) {
-				padding-right: 1px;
-			}
+			// &:not(:last-child) {
+			// 	padding-right: 1px;
+			// }
+			background-color: $text;
 		}
 		.grid-gallery {
 			display: block;
@@ -325,30 +353,44 @@ a {
 			transition: box-shadow 0.3s ease, z-index 0.3s ease;
 			z-index: 2;
 			position: relative;
-			&:not(:last-child) {
-				margin-bottom: 1px;
+			// &:not(:last-child) {
+			// 	margin-bottom: 1px;
+			// }
+			&::after {
+				position: absolute;
+				border-bottom: 1px solid $white;
+				width: 100%;
+				bottom: 0;
+				left: 0;
+				content: '';
+				z-index: 3;
+			}
+			&::before {
+				position: absolute;
+				border-right: 1px solid $white;
+				height: 100%;
+				top: 0;
+				right: 0;
+				content: '';
+				z-index: 3;
 			}
 			&:hover {
 				transition: box-shadow 0.3s ease, z-index 0.3s ease;
 				box-shadow: 0px 5px 30px 0px rgba(74, 63, 87, 0.24);
 				z-index: 4;
 				img {
-					filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale"); 
-					filter: grayscale(0%);
+					opacity: 1;
 				}
 			}
 			img {
 				display: block;
-				filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale"); 
-				filter: gray; 
-				filter: grayscale(100%); 
-				filter: progid:DXImageTransform.Microsoft.BasicImage(grayScale=1); 
-				-ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(grayScale=1)";
-				transition: all 0.3s ease;
+				opacity: 0.8;
+				transition: opacity 0.5s ease;
 				position: absolute;
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
+				will-change: opacity;
 			}
 			&.h177 {
 				@include x-rem(height, 177px);
@@ -377,6 +419,7 @@ a {
 }
 .fancybox-close {
 	background-image: url(../img/icons/close.png);
+	background-size: cover;
 }
 .fancybox-prev {
 	background-image: url(../img/icons/arrow-left.png);
@@ -425,7 +468,7 @@ a {
 		@include x-rem(margin, 8px 0 15px 0);
 	}
 	a, .section-head {
-		font-family: $M700;
+		font-family: $M500;
 		@include x-rem(font-size, 20px);
 		color: $text;
 		font-weight: normal;
@@ -486,6 +529,7 @@ a {
 	height: 0;
 	z-index: 5;
 	@include x-rem(top, 45px);
+	@include x-rem(right, 45px);
 	.menu-btn {
 		@include x-rem(width, 50px);
 		@include x-rem(height, 50px);
@@ -565,8 +609,8 @@ a {
 		position: absolute;
 		@include x-rem(top, 47px);
 		@include x-rem(left, 41px);
-		@include x-rem(width, 32px);
-		@include x-rem(height, 32px);
+		@include x-rem(width, 22px);
+		@include x-rem(height, 22px);
 		display: block;
 		background-image: url(../img/icons/close-menu.png);
 		background-size: cover;
@@ -597,7 +641,7 @@ a {
 			li {
 				@include x-rem(margin-bottom, 25px);
 				a {
-					font-family: $M500;
+					font-family: $M300;
 					@include x-rem(font-size, 30px);
 					color: $text;
 					// padding: 1px 0;
@@ -724,7 +768,7 @@ blockquote {
 	}
 }
 h2 {
-	font-family: $M700;
+	font-family: $M500;
 	font-weight: normal;
 	@include x-rem(font-size, 20px);
 	@include x-rem(letter-spacing, 0.8px);
@@ -787,7 +831,7 @@ h2 {
 .partner {
 	font-size: 0;
 	.partners-item {
-		width: 20%;
+		width: 33.33%;
 		display: inline-block;
 		vertical-align: top;
 		height: 100px;
@@ -842,6 +886,12 @@ h2 {
 		@include x-rem(margin, 0 75px 0 0);
 		float: left;
 	}
+	.callback {
+		background-color: $yellow;
+		span {
+			color: $brown;
+		}
+	}
 }
 .contacts-requisites {
 	padding-top: 20px;
@@ -851,7 +901,7 @@ h2 {
 			@include x-rem(margin, 0 0 18px 0);
 		}
 		.contacts-title {
-			font-family: $M700;
+			font-family: $M500;
 			font-weight: normal;
 			@include x-rem(font-size, 20px);
 			margin-bottom: 21px;
@@ -886,11 +936,41 @@ h2 {
 		color: #47424c;
 		@include x-rem(letter-spacing, 0.6px);
 	}
+	&:hover {
+		.icon {
+			-webkit-animation: rotate 1.5s forwards linear;
+			-moz-animation: rotate 1.5s forwards linear;
+			-ms-animation: rotate 1.5s forwards linear;
+			-o-animation: rotate 1.5s forwards linear;
+			animation: rotate 1.5s forwards linear;
+		}
+	}
+}
+@-webkit-keyframes rotate {
+	to { -webkit-transform: rotate(-360deg); }
+}
+
+@-moz-keyframes rotate {
+	to { -moz-transform: rotate(-360deg); }
+}
+
+@-ms-keyframes rotate {
+	to { -ms-transform: rotate(-360deg); }
+}
+
+@-o-keyframes rotate {
+	to { -o-transform: rotate(-360deg); }
+}
+
+@keyframes rotate {
+	to { transform: rotate(-360deg); }
 }
 #map {
 	width: 100%;
 	height: 346px;
-
+	@include x-rem(max-width, 512px);
+	float: left;
+	@include x-rem(margin-right, 75px);
 }
 .popup__wrap {
 	background-color: rgba(0,0,0,.3);
@@ -958,7 +1038,7 @@ h2 {
 		}
 	}
 	.popup__title {
-		font-family: $M700;
+		font-family: $M500;
 		@include x-rem(font-size, 30px);
 		color: #2c2732;
 		@include x-rem(margin, 0 0 43px 0);
@@ -1113,7 +1193,7 @@ html.overlay body {
 			z-index: -1;
 		}
 		.text {
-			font-family: $M700;
+			font-family: $M500;
 			font-weight: normal;
 			@include x-rem(font-size, 20px);
 			@include x-rem(line-height, 28px);
@@ -1154,6 +1234,12 @@ html.overlay body {
 			}
 		}
 	}
+	.accordion-more {
+		float: right;
+		p {
+			@include x-rem(font-size, 14px);
+		}
+	}
 	.accordion-toggle {
 		position: absolute;
 		width: 33px;
@@ -1166,7 +1252,7 @@ html.overlay body {
 		span {
 			width: 23px;
 			height: 23px;
-			border: 1px solid rgba(33,38,43,.1);
+			border: 1px solid rgba(33,38,43,.3);
 			border-radius: 100%;
 			display: block;
 			position: relative;
@@ -1176,7 +1262,7 @@ html.overlay body {
 			&::after {
 				width: 17px;
 				height: 1px;
-				background-color: rgba(33,38,43,.1);
+				background-color: rgba(33,38,43,.3);
 				content: '';
 				position: absolute;
 				top: 10px;
@@ -1186,7 +1272,7 @@ html.overlay body {
 			&::before {
 				width: 1px;
 				height: 17px;
-				background-color: rgba(33,38,43,.1);
+				background-color: rgba(33,38,43,.3);
 				content: '';
 				position: absolute;
 				top: 2px;
@@ -1218,7 +1304,7 @@ html.overlay body {
 		counter-increment: number;
 		margin-bottom: 12px;
 		span {
-			font-family: $M700;
+			font-family: $M500;
 			font-weight: normal;
 			@include x-rem(font-size, 16px);
 			color: #47424c;
@@ -1231,7 +1317,7 @@ html.overlay body {
 		}
 		&::before {
 			content: counter(number) '. ';
-			font-family: $M700;
+			font-family: $M500;
 			font-weight: normal;
 			@include x-rem(font-size, 16px);
 			color: #47424c;
@@ -1266,7 +1352,7 @@ html.overlay body {
 				transition: all 0.5s ease;
 			}
 			&.no {
-				.social, .overlay {
+				.language, .overlay, .logo{
 					opacity: 0;
 					visibility: hidden;
 					transform: translate(0, -100%);
@@ -1322,7 +1408,7 @@ html.overlay body {
 		.navi-head {
 			font-family: $M500;
 			color: $text;
-			@include x-rem(font-size, 12px);
+			@include x-rem(font-size, 14px);
 			opacity: 0.5;
 			transition: opacity 0.3s ease, color 0.3s ease;
 			display: block;
@@ -1483,7 +1569,7 @@ html.overlay body {
 			}
 		}
 		.text {
-			font-family: $M700;
+			font-family: $M500;
 			font-weight: normal;
 			@include x-rem(font-size, 20px);
 			color: #2c2732;
@@ -1520,11 +1606,19 @@ html.overlay body {
 .room {
 	position: relative;
 	.room-scheme {
-		@include x-rem(max-width, 816px);
+		// @include x-rem(max-width, 816px);
+		max-width: 90%;
 		margin: 0 auto;
 		position: relative;
 		img {
 			max-width: 100%;
+		}
+		@include r(1599) {
+			max-width: 75%;
+		}
+		@include r(1399) {
+			max-width: 65%;
+			margin: 0 0 0 5%;
 		}
 	}
 	.points {
@@ -1558,6 +1652,37 @@ html.overlay body {
 						opacity: 1;
 						visibility: visible;
 						transform: translate(0, 0);
+					}
+				}
+			}
+			&.points-item_idea {
+				@include x-rem(width, 18px);
+				@include x-rem(height, 32px);
+				.icon {
+					@include x-rem(width, 18px);
+					@include x-rem(height, 32px);
+					background-image: url(../img/svg/bulb.svg);
+					background-size: cover;
+					&:hover {
+						opacity: 0;
+					}
+				}
+				.points-infobox {
+					@include x-rem(right, -15px);
+					left: auto;
+					// opacity: 1;
+					// visibility: visible;
+					// transform: none;
+					bottom: 20%;
+					&::after {
+						content: '';
+						bottom: -12px;
+						@include x-rem(right, 32px);
+						background-image: url(../img/svg/chat.svg);
+						background-size: cover;
+						width: 20px;
+						height: 13px;
+						position: absolute;
 					}
 				}
 			}
@@ -1595,11 +1720,12 @@ html.overlay body {
 	@include x-rem(max-width, 784px);
 	margin: 0 auto;
 	.creation-title {
-		font-family: $M700;
+		font-family: $M500;
 		@include x-rem(font-size, 20px);
 		@include x-rem(line-height, 30px);
 		@include x-rem(margin, 0 0 39px 0);
 		text-align: center;
+		color: $dGrey;
 	}
 	.creation-points {
 		position: relative;
@@ -1609,6 +1735,7 @@ html.overlay body {
 			li {
 				width: 50%;
 				display: inline-block;
+				vertical-align: top;
 				font-family: $M300;
 				@include x-rem(font-size, 16px);
 				@include x-rem(line-height, 25px);
@@ -1632,149 +1759,143 @@ html.overlay body {
 		}
 	}
 }
-.section {
-	&.stage-2 {
-		.points-item {
-			&.point-1 {
-				left: 49.1%;
-				top: 50.9%;
-			}
-		}
-	}
-	&.stage-3 {
-		.points-item {
-			&.point-1 {
-				left: 16.1%;
-				top: 24.2%;
-			}
-			&.point-2 {
-				left: 48.45%;
-				top: 23.2%;
-			}
-			&.point-3 {
-				right: 17.1%;
-				top: 25.9%;
-			}
-			&.point-4 {
-				right: 22.5%;
-				top: 30.9%;
-			}
-			&.point-5 {
-				right: 49.5%;
-				top: 36.9%;
-			}
-			&.point-6 {
-				left: 16.1%;
-				top: 47.2%;
-			}
-			&.point-7 {
-				right: 18.1%;
-				top: 46.2%;
-			}
-			&.point-8 {
-				bottom: 37.3%;
-				right: 49.4%;
-			}
-			&.point-9 {
-				bottom: 23.6%;
-				right: 49.1%;
-			}
-			&.point-10 {
-				bottom: 17.6%;
-				left: 12.8%;
-			}
-			&.point-11 {
-				bottom: 14.3%;
-				left: 25.4%;
-			}
-			&.point-12 {
-				bottom: 13.3%;
-				right: 16.2%;
-			}
-		}
-	}
-	&.stage-4 {
-		.points-item {
-			&.point-1 {
-				left: 49%;
-				top: 17.1%;
-			}
-			&.point-2 {
-				right: 24.7%;
-				top: 37.9%;
-			}
-			&.point-3 {
-				right: 3.1%;
-				top: 50.4%;
-			}
-			&.point-4 {
-				bottom: 36.6%;
-				right: 31.5%;
-			}
-			&.point-5 {
-				bottom: 29%;
-				right: 10.4%;
-			}
-			&.point-6 {
-				bottom: 25.2%;
-				left: 52.1%;
-			}
-			&.point-7 {
-				bottom: 27.8%;
-				left: 29.1%;
-			}
-			&.point-8 {
-				bottom: 14.5%;
-				left: 14.8%;
-			}
-			&.point-9 {
-				bottom: 9.9%;
-				left: 23.1%;
-			}
-		}
-	}
-	&.stage-5 {
-		.points-item {
-			&.point-1 {
-				left: 6.2%;
-				top: 4.1%
-			}
-			&.point-2 {
-				right: 49.2%;
-				top: 13.4%;
-			}
-			&.point-3 {
-				right: 48%;
-				top: 30.4%;
-			}
-			&.point-4 {
-				right: 33.4%;
-				top: 38.5%;
-			}
-			&.point-5 {
-				right: 24.8%;
-				top: 38%;
-			}
-			&.point-6 {
-				bottom: 47.1%;
-				right: 3.2%;
-			}
-			&.point-7 {
-				bottom: 36.8%;
-				right: 34%;
-			}
-			&.point-8 {
-				bottom: 28.9%;
-				right: 10.6%;
-			}
-			&.point-9 {
-				bottom: 25.9%;
-				left: 49.1%;
-			}
-			&.point-10 {
-				bottom: 50.4%;
-				left: 22.1%;
-			}
-		}
-	}
-}
+// .section {
+// 	&.stage-2 {
+// 		.points-item {
+// 			// &.point-1 {
+// 			// 	left: 49.1%;
+// 			// 	top: 50.9%;
+// 			// }
+// 		}
+// 	}
+// 	&.stage-3 {
+// 		.points-item {
+// 			&.point-1 {
+// 				left: 16.1%;
+// 				top: 24.2%;
+// 			}
+// 			&.point-2 {
+// 				left: 48.45%;
+// 				top: 23.2%;
+// 			}
+// 			&.point-3 {
+// 				right: 17.1%;
+// 				top: 25.9%;
+// 			}
+// 			&.point-4 {
+// 				right: 22.5%;
+// 				top: 30.9%;
+// 			}
+// 			&.point-5 {
+// 				right: 49.5%;
+// 				top: 36.9%;
+// 			}
+// 			&.point-6 {
+// 				left: 16.1%;
+// 				top: 47.2%;
+// 			}
+// 			&.point-7 {
+// 				right: 18.1%;
+// 				top: 46.2%;
+// 			}
+// 			&.point-8 {
+// 				bottom: 37.3%;
+// 				right: 49.4%;
+// 			}
+// 			&.point-9 {
+// 				bottom: 23.6%;
+// 				right: 49.1%;
+// 			}
+// 			&.point-10 {
+// 				bottom: 17.6%;
+// 				left: 12.8%;
+// 			}
+// 			&.point-11 {
+// 				bottom: 14.3%;
+// 				left: 25.4%;
+// 			}
+// 			&.point-12 {
+// 				bottom: 13.3%;
+// 				right: 16.2%;
+// 			}
+// 			&.point-13 {
+// 				top: 46%;
+// 				left: 40.5%;
+// 			}
+// 		}
+// 	}
+// 	&.stage-4 {
+// 		.points-item {
+// 			&.point-1 {
+// 				left: 49%;
+// 				top: 17.1%;
+// 			}
+// 			&.point-2 {
+// 				right: 24.7%;
+// 				top: 37.9%;
+// 			}
+// 			&.point-3 {
+// 				right: 3.1%;
+// 				top: 50.4%;
+// 			}
+// 			&.point-4 {
+// 				bottom: 36.6%;
+// 				right: 31.5%;
+// 			}
+// 			&.point-5 {
+// 				bottom: 29%;
+// 				right: 10.4%;
+// 			}
+// 			&.point-6 {
+// 				bottom: 25.2%;
+// 				left: 52.1%;
+// 			}
+// 			&.point-7 {
+// 				bottom: 27.8%;
+// 				left: 29.1%;
+// 			}
+// 			&.point-8 {
+// 				bottom: 14.5%;
+// 				left: 14.8%;
+// 			}
+// 			&.point-9 {
+// 				bottom: 9.9%;
+// 				left: 23.1%;
+// 			}
+// 		}
+// 	}
+// 	&.stage-5 {
+// 		.points-item {
+// 			&.point-1 {
+// 				left: 6.2%;top: 4.1%
+// 			}
+// 			&.point-2 {
+// 				right: 49.2%;top: 13.4%;
+// 			}
+// 			&.point-3 {
+// 				right: 48%;top: 30.4%;
+// 			}
+// 			&.point-4 {
+// 				right: 33.4%;top: 38.5%;
+// 			}
+// 			&.point-5 {
+// 				right: 24.8%;top: 38%;
+// 			}
+// 			&.point-6 {
+// 				bottom: 47.1%;right: 3.2%;
+// 			}
+// 			&.point-7 {
+// 				bottom: 36.8%;right: 34%;
+// 			}
+// 			&.point-8 {
+// 				bottom: 28.9%;right: 10.6%;
+// 			}
+// 			&.point-9 {
+// 				bottom: 25.9%;left: 49.1%;
+// 			}
+// 			&.point-10 {
+// 				bottom: 50.4%;left: 22.1%;
+// 			}
+// 		}
+// 	}
+// }
