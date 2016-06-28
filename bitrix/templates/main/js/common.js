@@ -366,11 +366,17 @@ $(document).ready(function () {
 		}
 
 		function fullPage(fullpage){
+			var anchors = [];
+			$.each(fullpage.children(), function(k,e) {
+				console.log(e);
+				anchors.push($(e).data('anchor'));
+			});
+
 			fullpage.fullpage({
 				//verticalCentered: false,
 				scrollingSpeed: 1400,
 				menu: '.navi',
-				anchors:['concept', 'consulting', 'design', 'creature', 'care', 'company'],
+				anchors: anchors,
 				onLeave: function(index, nextIndex, direction){
 					header(direction, nextIndex);
 				}
