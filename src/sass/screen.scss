@@ -1225,6 +1225,7 @@ html.overlay body {
 		transition: border-color 0.5s ease, box-shadow 0.5s ease;
 		position: relative;
 		overflow: hidden;
+		cursor: pointer;
 		&:hover {
 			border-color: transparent;
 			box-shadow: 0px 5px 18px 0px rgba(74, 63, 87, 0.15);
@@ -1660,19 +1661,21 @@ html.overlay body {
 	position: relative;
 	.room-scheme {
 		// @include x-rem(max-width, 816px);
-		max-width: 90%;
+		max-width: 100%;
 		margin: 0 auto;
 		position: relative;
+		text-align: center;
 		img {
 			max-width: 100%;
+			max-height: 100%;
 		}
-		@include r(1599) {
-			max-width: 75%;
-		}
-		@include r(1399) {
-			max-width: 65%;
-			margin: 0 0 0 5%;
-		}
+		// @include r(1599) {
+		// 	max-width: 75%;
+		// }
+		// @include r(1399) {
+		// 	max-width: 65%;
+		// 	margin: 0 0 0 5%;
+		// }
 	}
 	.points {
 		position: absolute;
