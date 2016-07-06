@@ -272,9 +272,10 @@ $(document).ready(function () {
 
 			fullpage.fullpage({
 				//verticalCentered: false,
+				
 				scrollingSpeed: 1400,
 				menu: '.navi',
-				anchors: anchors,
+				anchors:['concept', 'consulting', 'design', 'creature', 'care', 'company'],
 				onLeave: function(index, nextIndex, direction){
 					header(direction, nextIndex);
 				}
