@@ -6,5 +6,6 @@
 //= lib/isotope.pkgd.min.js
 //= lib/jquery.fancybox.pack.js
 //= lib/jquery.validator.min.js
+//= lib/jquery.tooltipster.min.js
 
 //= app.js

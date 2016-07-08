@@ -341,4 +341,32 @@ $(document).ready(function () {
 	};
 	imageSizer();
 
+
+	function tips(id, tip) {
+		tip.tooltipster({
+			animation: 'fade',
+			maxWidth: 550,
+			speed: 500,
+			contentAsHTML: true,
+			delay: 0,
+			functionInit: function(instance, helper){
+				return $('#' + id).html();
+			},
+			functionReady: function(){
+				$('#' + id).attr('aria-hidden', false);
+			},
+			functionAfter: function(){
+				$('#' + id).attr('aria-hidden', true);
+			}
+		});
+	};
+
+	function tipInit() {
+		var tip = $('.tips');
+			tip.each(function(){
+					var aria = $(this).attr('aria-describedby');
+					tips(aria, $(this));
+			});
+	} tipInit();
+
 })

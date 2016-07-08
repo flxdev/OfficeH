@@ -1698,18 +1698,18 @@ html.overlay body {
 						fill: #ffd542;
 					}
 				}
-				&:hover {
-					div {
-						path {
-							fill: #ebc236
-						}
-					}
-					& + .points-infobox {
-						opacity: 1;
-						visibility: visible;
-						transform: translate(0, 0);
-					}
-				}
+				// &:hover {
+				// 	div {
+				// 		path {
+				// 			fill: #ebc236
+				// 		}
+				// 	}
+				// 	& + .points-infobox {
+				// 		opacity: 1;
+				// 		visibility: visible;
+				// 		transform: translate(0, 0);
+				// 	}
+				// }
 			}
 			&.points-item_idea {
 				@include x-rem(width, 18px);
@@ -1721,15 +1721,24 @@ html.overlay body {
 					background-size: cover;
 					&:hover {
 						opacity: 0;
+						& + .points-infobox {
+							opacity: 1;
+							visibility: visible;
+						}
 					}
 				}
 				.points-infobox {
+					display: inline-block;
 					@include x-rem(right, -15px);
 					left: auto;
 					// opacity: 1;
 					// visibility: visible;
 					// transform: none;
 					bottom: 20%;
+					background-color: $white;
+					border-radius: 5px;
+					@include x-rem(width, 520px);
+					z-index: 15;
 					&::after {
 						content: '';
 						bottom: -12px;
@@ -1744,32 +1753,29 @@ html.overlay body {
 			}
 		}
 		.points-infobox {
+			display: none;
 			position: absolute;
 			bottom: 100%;
 			margin-bottom: 6px;
 			@include x-rem(margin, 0 0 6px 0);
-			@include x-rem(width, 202px);
 			@include x-rem(left, -92px);
 			opacity: 0;
 			visibility: hidden;
-			transform: translate(0, -10px);
-			transition: all 0.3s ease;
+			transition: all 0.5s ease;
 			user-select: none;
 			pointer-events: none;
-			.points-infobox__inner {
-				background-color: $white;
-				@include x-rem(padding, 15px 19px);
-				box-shadow: 0 5px 32px rgba(74,63,87,.19);
-				border-radius: 5px;
-				text-align: center;
-				p {
-					font-family: $M300;
-					font-size: 16px;
-					@include x-rem(font-size, 16px);
-					color: #47424c;
-				}
-			}
 		}
+	}
+}
+.points-infobox__inner {
+	@include x-rem(padding, 15px 19px);
+	display: block;
+	text-align: center;
+	p {
+		font-family: $M300;
+		font-size: 16px;
+		@include x-rem(font-size, 16px);
+		color: #47424c;
 	}
 }
 .creation {
