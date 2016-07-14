@@ -112,6 +112,13 @@ a {
 		}
 	}
 }
+.ie {
+	.header {
+		.logo {
+			background-size: auto;
+		}
+	}
+}
 .header {
 	@include x-rem(padding-top, 35px);
 	position: relative;
@@ -584,8 +591,10 @@ a {
 	@include x-rem(top, 45px);
 	@include x-rem(right, 45px);
 	.menu-btn {
-		@include x-rem(width, 50px);
-		@include x-rem(height, 50px);
+		// @include x-rem(width, 50px);
+		// @include x-rem(height, 50px);
+		height: 50px;
+		width: 50px;
 		border: 1px solid rgba(0,0,0,.3);
 		float: right;
 		border-radius: 100%;
@@ -595,8 +604,10 @@ a {
 		transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
 		transform: scale(0.5);
 		span {
-			@include x-rem(width, 22px);
-			@include x-rem(height, 2px);
+			// @include x-rem(width, 22px);
+			// @include x-rem(height, 2px);
+			width: 22px;
+			height: 2px;
 			background-color: $text;
 			display: inline-block;
 			vertical-align: middle;
@@ -607,7 +618,8 @@ a {
 				left: 0;
 				@include x-rem(top, -7px);
 				width: 100%;
-				@include x-rem(height, 2px);
+				// @include x-rem(height, 2px);
+				height: 2px;
 				background-color: $text;
 			}
 			&::before {
@@ -616,7 +628,8 @@ a {
 				left: 0;
 				@include x-rem(bottom, -7px);
 				width: 100%;
-				@include x-rem(height, 2px);
+				// @include x-rem(height, 2px);
+				height: 2px;
 				background-color: $text;
 			}
 		}
@@ -914,12 +927,27 @@ h2 {
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
-				filter: saturate(0);
-				transition: filter 0.3s ease;
+				will-change: transform;
+				&:first-child {
+					opacity: 1;
+					transition: opacity 0.3s ease;
+				}
+				&:last-child {
+					opacity: 0;
+					transition: opacity 0.3s ease 0.1s;
+				}
+
 			}
 			&:hover {
 				img {
-					filter: saturate(1);
+					&:first-child {
+						opacity: 0;
+						transition: opacity 0.3s ease 0.1s;
+					}
+					&:last-child {
+						opacity: 1;
+						transition: opacity 0.3s ease;
+					}
 				}
 			}
 		}
@@ -1296,13 +1324,15 @@ html.overlay body {
 	}
 	.accordion-toggle {
 		position: absolute;
-		width: 33px;
-		height: 33px;
+		width: 23px;
+		height: 23px;
 		display: block;
 		top: 23px;
 		right: 30px;
 		cursor: pointer;
-		transform: translateZ(0);
+		transition: transform 0.3s ease;
+		transform-origin: 50%;
+		// transform: translateZ(0);
 		span {
 			width: 23px;
 			height: 23px;
@@ -1310,9 +1340,9 @@ html.overlay body {
 			border-radius: 100%;
 			display: block;
 			position: relative;
-			transition: transform 0.5s ease, border-color 0.5s ease;
+			transition: border-color 0.3s ease;
 			transform: rotate(0deg);
-			will-change: transform;
+			// will-change: transform;
 			&::after {
 				width: 17px;
 				height: 1px;
@@ -1321,7 +1351,7 @@ html.overlay body {
 				position: absolute;
 				top: 10px;
 				left: 2px;
-				transition: background-color 0.5s ease;
+				transition: background-color 0.3s ease;
 			}
 			&::before {
 				width: 1px;
@@ -1331,13 +1361,14 @@ html.overlay body {
 				position: absolute;
 				top: 2px;
 				left: 10px;
-				transition: background-color 0.5s ease;
+				transition: background-color 0.3s ease;
 			}
 		}
 		&:hover {
+			
+				transform: rotate(-45deg);
 			span {
 				border-color: #f1c735;
-				transform: rotate(-45deg);
 				&::after {
 					background-color: #f1c735;
 				}
@@ -1498,7 +1529,7 @@ html.overlay body {
 				opacity: 1;
 			}
 			.navi-descr {
-				@include x-rem(height, 204px);
+				@include x-rem(height, 215px);
 			}
 		}
 		&:hover {
@@ -1791,7 +1822,7 @@ html.overlay body {
 	}
 	.creation-points {
 		position: relative;
-		@include x-rem(left, 67px);
+		// @include x-rem(left, 67px);
 		.creation-list {
 			font-size: 0;
 			li {
@@ -1801,7 +1832,7 @@ html.overlay body {
 				font-family: $M300;
 				@include x-rem(font-size, 16px);
 				@include x-rem(line-height, 25px);
-				@include x-rem(padding, 0 0 0 39px);
+				@include x-rem(padding, 0 20px 0 39px);
 				@include x-rem(margin, 0 0 18px 0);
 				@include x-rem(letter-spacing, 0.7px);
 				color: $pColor;
@@ -1961,3 +1992,9 @@ html.overlay body {
 // 		}
 // 	}
 // }
+
+@media only screen and (max-height: 400px) {
+	html {
+		font-size: 10px;
+	}
+}

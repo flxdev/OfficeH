@@ -266,7 +266,6 @@ $(document).ready(function () {
 		function fullPage(fullpage){
 			var anchors = [];
 			$.each(fullpage.children(), function(k,e) {
-				console.log(e);
 				anchors.push($(e).data('anchor'));
 			});
 
@@ -287,6 +286,7 @@ $(document).ready(function () {
 		});
 
 		function header(direction, nextIndex) {
+			console.log(nextIndex)
 			if(direction === 'down') {
 				$('.section').removeClass('up');
 				$('.section.active').next().addClass('down').siblings().removeClass('down');
@@ -301,6 +301,15 @@ $(document).ready(function () {
 				$('.header').delay(700).removeClass('no');
 				$('.menu').removeClass('is-active');
 				$('.menu__wrapper').removeClass('is-active');
+			}
+			if(nextIndex === 6 || nextIndex === 1) {
+				$('.header').delay(700).removeClass('no');
+				$('.menu').removeClass('is-active');
+				$('.menu__wrapper').removeClass('is-active');
+				
+			} else {
+				$('.header').addClass('no');
+				$('.menu').delay(700).addClass('is-active');
 			}
 		};
 
