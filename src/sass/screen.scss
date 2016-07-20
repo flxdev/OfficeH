@@ -206,6 +206,9 @@ a {
 	@include x-rem(width, 1158px);
 	margin: 0 auto;
 	@include clearfix;
+	@include r(1178) {
+		padding: 0 20px;
+	}
 }
 .wrapper {
 	position: relative;
@@ -238,6 +241,24 @@ a {
 		position: absolute;
 		top: 0;
 		left: 0;
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0.5+75,0.5+75,0.5+100,0.5+100,0.5+100 */
+			/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+			background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 75%, rgba(255,255,255,0.5) 100%); /* FF3.6-15 */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(75%,rgba(255,255,255,0.5)), color-stop(100%,rgba(255,255,255,0.5))); /* Chrome4-9,Safari4-5 */
+			background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0.5) 100%); /* Opera 11.10-11.50 */
+			background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0.5) 100%); /* IE10 preview */
+			background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#80ffffff',GradientType=0 ); /* IE6-8 */
+			content: '';
+		}
 	}
 	.swiper-pagination {
 		top: 45%;
@@ -477,19 +498,43 @@ a {
 		}
 	}
 }
-.fancybox-close {
+.fancybox-close, .fancybox-overlay .close {
 	background-image: url(../img/icons/close.png);
 	background-size: cover;
 }
-.fancybox-prev {
+.fancybox-prev, .fancybox-overlay .prev {
 	background-image: url(../img/icons/arrow-left.png);
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 }
-.fancybox-next {
+.fancybox-next, .fancybox-overlay .next {
 	background-image: url(../img/icons/arrow-right.png);
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
+}
+.fancybox-overlay .next {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50px;
+	height: 100%;
+	cursor: pointer;
+}
+.fancybox-overlay .prev {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50px;
+	height: 100%;
+	cursor: pointer;
+}
+.fancybox-overlay .close {
+	position: absolute;
+	top: 30px;
+    right: 30px;
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
 }
 .grid-row {
 	@include clearfix;
@@ -708,7 +753,7 @@ a {
 				@include x-rem(margin-bottom, 25px);
 				a {
 					font-family: $M300;
-					@include x-rem(font-size, 30px);
+					@include x-rem(font-size, 22px);
 					color: $text;
 					// padding: 1px 0;
 					@include x-rem(letter-spacing, 0.4px);
@@ -973,6 +1018,9 @@ h2 {
 			color: $brown;
 		}
 	}
+	.overlay {
+		@include x-rem(padding-left, 35px);
+	}
 }
 .contacts-requisites {
 	padding-top: 20px;
@@ -1047,11 +1095,11 @@ h2 {
 	to { transform: rotate(-360deg); }
 }
 #map {
-	width: 100%;
+	width: 50%;
 	height: 346px;
-	@include x-rem(max-width, 512px);
+	// @include x-rem(max-width, 512px);
 	float: left;
-	@include x-rem(margin-right, 75px);
+	@include x-rem(padding-right, 35px);
 }
 .popup__wrap {
 	background-color: rgba(0,0,0,.3);
@@ -1257,6 +1305,9 @@ html.overlay body {
 		&:hover {
 			border-color: transparent;
 			box-shadow: 0px 5px 18px 0px rgba(74, 63, 87, 0.15);
+		}
+		&.no-detail {
+			cursor: initial;
 		}
 	}
 	.accordion-head {
@@ -1673,6 +1724,7 @@ html.overlay body {
 	transform: translateX(-50%);
 	text-align: center;
 	cursor: pointer;
+	padding-bottom: 15px;
 	.stage-text {
 		font-family: $M500;
 		@include x-rem(font-size, 12px);
@@ -1686,6 +1738,26 @@ html.overlay body {
 		border-right: 2px solid $text;
 		transform: rotate(45deg);
 		display: inline-block;
+		position: absolute;
+		left: 50%;
+		@include x-rem(margin-left, -11px);
+		animation: infinite alternate 0.7s arrow-motion linear;
+	}
+}
+@-webkit-keyframes arrow-motion {
+	0% {
+		top: 0;
+	}
+	100% {
+		top: 50%;
+	}
+}
+@-keyframes arrow-motion {
+	0% {
+		top: 0;
+	}
+	100% {
+		top: 50%;
 	}
 }
 .room {
@@ -1720,6 +1792,8 @@ html.overlay body {
 			.icon {
 				@include x-rem(width, 18px);
 				@include x-rem(height, 18px);
+				border-radius: 100%;
+				background-color: $white;
 				div {
 					@include x-rem(width, 18px);
 					@include x-rem(height, 18px);
