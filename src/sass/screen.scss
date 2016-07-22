@@ -498,7 +498,7 @@ a {
 		}
 	}
 }
-.fancybox-close, .fancybox-overlay .close {
+.fancybox-close{
 	background-image: url(../img/icons/close.png);
 	background-size: cover;
 }
@@ -535,6 +535,29 @@ a {
     width: 23px;
     height: 23px;
     cursor: pointer;
+    border-radius: 100%;
+    background-color: rgba(255,255,255,.5);
+    transform-origin: 50%;
+    transform: rotate(-45deg);
+    will-change: transform;
+	&::after {
+		width: 17px;
+		height: 1px;
+		top: 11px;
+		left: 3px;
+		content: '';
+		position: absolute;
+		background-color: rgba(33,38,43,.7);
+	}
+	&::before {
+		width: 1px;
+		height: 17px;
+		top: 3px;
+		left: 11px;	
+		content: '';
+		position: absolute;
+		background-color: rgba(33,38,43,.7);
+	}
 }
 .grid-row {
 	@include clearfix;
@@ -1824,6 +1847,7 @@ html.overlay body {
 					@include x-rem(height, 32px);
 					background-image: url(../img/svg/bulb.svg);
 					background-size: cover;
+					background-color: transparent;
 					&:hover {
 						opacity: 0;
 						& + .points-infobox {
@@ -1832,27 +1856,60 @@ html.overlay body {
 						}
 					}
 				}
+				&.bulb-white {
+					.icon {
+						background-image: url(../img/svg/bulb-white.svg);
+					}
+				}
 				.points-infobox {
 					display: inline-block;
-					@include x-rem(right, -15px);
+					@include x-rem(right, -75px);
 					left: auto;
 					// opacity: 1;
 					// visibility: visible;
 					// transform: none;
-					bottom: 20%;
+					@include x-rem(bottom, 50px);
 					background-color: $white;
-					border-radius: 5px;
-					@include x-rem(width, 520px);
+					@include x-rem(width, 451px);
 					z-index: 15;
 					&::after {
 						content: '';
-						bottom: -12px;
-						@include x-rem(right, 32px);
-						background-image: url(../img/svg/chat.svg);
+						@include x-rem(bottom, -75px);
+						@include x-rem(right, 96px);
+						background-image: url(../img/svg/circle.svg);
 						background-size: cover;
-						width: 20px;
-						height: 13px;
+						@include x-rem(width, 30px);
+						@include x-rem(height, 30px);
 						position: absolute;
+					}
+				}
+				.points-infobox__inner {
+					position: relative;
+					@include x-rem(margin, -35px 0 -55px);
+					@include x-rem(padding, 35px 19px);
+					&::before {
+						content: '';
+						position: absolute;
+						top: 0;
+						@include x-rem(left, -4px);
+						@include x-rem(right, -5px);
+						@include x-rem(height, 37px);
+						background-image: url(../img/svg/rectangle-top.svg);
+						background-repeat: no-repeat;
+						background-size: cover;
+						z-index: -1;
+					}
+					&::after {
+						content: '';
+						position: absolute;
+						bottom: 0;
+						left: -1px;
+						@include x-rem(right, -3px);
+						@include x-rem(height, 55px);
+						background-image: url(../img/svg/rectangle-bottom.svg);
+						background-repeat: no-repeat;
+						background-size: cover;
+						z-index: -1;
 					}
 				}
 			}

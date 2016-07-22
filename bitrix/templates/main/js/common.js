@@ -406,10 +406,10 @@ $(document).ready(function () {
 
 		function fullPage(fullpage){
 			var anchors = [];
-			$.each(fullpage.children(), function(k,e) {
-				//console.log(e);
-				anchors.push($(e).data('anchor'));
-			});
+			// $.each(fullpage.children(), function(k,e) {
+			// 	//console.log(e);
+			// 	anchors.push($(e).data('anchor'));
+			// });
 
 			fullpage.fullpage({
 				verticalCentered: true,
