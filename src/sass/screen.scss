@@ -1839,6 +1839,30 @@ html.overlay body {
 				// 	}
 				// }
 			}
+			&.bulb-white {
+				.icon {
+					background-image: url(../img/svg/bulb-white.svg);
+					@include x-rem(width, 18px);
+					@include x-rem(height, 32px);
+					background-size: cover;
+					background-color: transparent;
+				}
+				svg {
+					display: none;
+				}
+			}
+			&.info-yellow {
+				.icon {
+					@include x-rem(width, 18px);
+					@include x-rem(height, 18px);
+					display: block;
+					background-image: url(../img/svg/info.svg);
+					path {
+						transition: fill 0.3s ease;
+						
+					}
+				}
+			}
 			&.points-item_idea {
 				@include x-rem(width, 18px);
 				@include x-rem(height, 32px);
