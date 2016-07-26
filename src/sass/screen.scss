@@ -49,6 +49,7 @@ a {
 	height: 100%;
 }
 .out {
+	position: relative;
 	background-color: $white;
 	@include x-rem(margin, 0 auto -100px);
 	.push {
@@ -219,6 +220,10 @@ a {
 	.wrapper {
 		@include x-rem(max-width, 964px);
 		margin: 0 auto;
+		position: absolute;
+		top: 45%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		.l {
 			width: 100%;
 		}
