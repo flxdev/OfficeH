@@ -1937,6 +1937,7 @@ html.overlay body {
 	.grid-gallery {
 		display: block;
 		position: relative;
+		transition: box-shadow .3s ease,z-index .3s ease;
 		&::after {
 			content: '';
 			border: 1px solid $white;
@@ -1950,6 +1951,16 @@ html.overlay body {
 			position: relative;
 			max-width: 100%;
 			display: block;
+			opacity: .8;
+			transition: opacity .5s ease;
+			will-change: opacity;
+		}
+		&:hover {
+			box-shadow: 0 5px 30px 0 rgba(74,63,87,.24);
+			z-index: 4;
+			img {
+				opacity: 1;
+			}
 		}
 	}
 }
