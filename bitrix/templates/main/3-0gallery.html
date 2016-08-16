@@ -51,63 +51,135 @@
 				<div class="title">Галерея интерьеров</div>
 				<div class="grid">
 					<div class="grid-nav">
-						<button class="button btn-filter is-active" >Все</button>
-						<button class="button btn-filter">Рабочие системы</button>
-						<button class="button btn-filter">Переговорные</button>
-						<button class="button btn-filter">кабинет руководителя</button>
-						<button class="button btn-filter">зоны общения</button>
-						<button class="button btn-filter">входные зоны</button>
-						<button class="button btn-filter">аккустические решения</button>
-						<button class="button btn-filter">офисные кресла</button>
+						<button class="button btn-filter is-active" data-filter="*">Все</button>
+						<button class="button btn-filter" data-filter=".work">Рабочие системы</button>
+						<button class="button btn-filter" data-filter=".negotiations">Переговорные</button>
+						<button class="button btn-filter" data-filter=".head-office">кабинет руководителя</button>
+						<button class="button btn-filter" data-filter=".communication">зоны общения</button>
+						<button class="button btn-filter" data-filter=".entrance-area">входные зоны</button>
+						<button class="button btn-filter" data-filter=".acoustic-solutions">аккустические решения</button>
+						<button class="button btn-filter" data-filter=".office-chair">офисные кресла</button>
 					</div>
 					<div class="grid-layout">
-						<div class="grid-columns">
-							<a href="img/grid/grid11.jpg" class="grid-gallery h354" rel="gal" title="Офисное кресло коллекции Bernhardt Forest">
-								<img src="img/grid/grid22.jpg" alt="">
-							</a>
-							<a href="img/grid/grid33jpg.jpg" class="grid-gallery h443" rel="gal" title="Офисное кресло коллекции Bernhardt Forest">
-								<img src="img/grid/grid33jpg.jpg" alt="">
-							</a>
-							<a href="img/grid/grid22.jpg" class="grid-gallery h234" rel="gal" title="Офисное кресло коллекции Bernhardt Forest">
-								<img src="img/grid/grid22.jpg" alt="">
-							</a>
-						</div>
-						<div class="grid-columns">
-							<a href="img/grid/grid22.jpg" class="grid-gallery h234" rel="gal" title="Офисное кресло коллекции Bernhardt Forest">
-								<img src="img/grid/grid22.jpg" alt="">
-							</a>
-							<a href="img/grid/grid22.jpg" class="grid-gallery h354" rel="gal" title="Офисное кресло коллекции Bernhardt Forest">
-								<img src="img/grid/grid22.jpg" alt="">
-							</a>
-							<a href="img/grid/grid22.jpg" class="grid-gallery h443" rel="gal" title="Офисное кресло коллекции Bernhardt Forest">
-								<img src="img/grid/grid22.jpg" alt="">
-							</a>
-						</div>
-						<div class="grid-columns">
-							<a href="img/grid/grid33jpg.jpg" class="grid-gallery h177" rel="gal" title="Офисное кресло коллекции Bernhardt Forest">
-								<img src="img/grid/grid33jpg.jpg" alt="">
-							</a>
-							<a href="img/grid/grid22.jpg" class="grid-gallery h443" rel="gal" title="Офисное кресло коллекции Bernhardt Forest">
-								<img src="img/grid/grid22.jpg" alt="">
-							</a>
-							<a href="img/grid/grid22.jpg" class="grid-gallery h177" rel="gal" title="Офисное кресло коллекции Bernhardt Forest">
-								<img src="img/grid/grid22.jpg" alt="">
-							</a>
-							<a href="img/grid/grid22.jpg" class="grid-gallery h234" rel="gal" title="Офисное кресло коллекции Bernhardt Forest">
-								<img src="img/grid/grid22.jpg" alt="">
-							</a>
-						</div>
-						<div class="grid-columns">
-							<a href="img/grid/grid22.jpg" class="grid-gallery h443" rel="gal" title="Офисное кресло коллекции Bernhardt Forest">
-								<img src="img/grid/grid22.jpg" alt="">
-							</a>
-							<a href="img/grid/grid33jpg.jpg" class="grid-gallery h234" rel="gal" title="Офисное кресло коллекции Bernhardt Forest">
-								<img src="img/grid/grid33jpg.jpg" alt="">
-							</a>
-							<a href="img/grid/grid22.jpg" class="grid-gallery h354" rel="gal" title="Офисное кресло коллекции Bernhardt Forest">
-								<img src="img/grid/grid22.jpg" alt="">
-							</a>
-						</div>
+						<ul class="grid-effect">
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-1.jpg"><img src="img/grid/grid-1.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-2.jpg"><img src="img/grid/grid-2.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-3.jpg"><img src="img/grid/grid-3.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-4.jpg"><img src="img/grid/grid-4.jpg" alt=""></a></li>
+							<li class="entrance-area"><a class='grid-gallery ' href="img/grid/grid-5.jpg"><img src="img/grid/grid-5.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-6.jpg"><img src="img/grid/grid-6.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-7.jpg"><img src="img/grid/grid-7.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-8.jpg"><img src="img/grid/grid-8.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-9.jpg"><img src="img/grid/grid-9.jpg" alt=""></a></li>
+							<li class="communication"><a class='grid-gallery ' href="img/grid/grid-10.jpg"><img src="img/grid/grid-10.jpg" alt=""></a></li>
+							<li class="acoustic-solutions"><a class='grid-gallery ' href="img/grid/grid-11.jpg"><img src="img/grid/grid-11.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-12.jpg"><img src="img/grid/grid-12.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-13.jpg"><img src="img/grid/grid-13.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-1.jpg"><img src="img/grid/grid-1.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-2.jpg"><img src="img/grid/grid-2.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-3.jpg"><img src="img/grid/grid-3.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-4.jpg"><img src="img/grid/grid-4.jpg" alt=""></a></li>
+							<li class="entrance-area"><a class='grid-gallery ' href="img/grid/grid-5.jpg"><img src="img/grid/grid-5.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-6.jpg"><img src="img/grid/grid-6.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-7.jpg"><img src="img/grid/grid-7.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-8.jpg"><img src="img/grid/grid-8.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-9.jpg"><img src="img/grid/grid-9.jpg" alt=""></a></li>
+							<li class="communication"><a class='grid-gallery ' href="img/grid/grid-10.jpg"><img src="img/grid/grid-10.jpg" alt=""></a></li>
+							<li class="acoustic-solutions"><a class='grid-gallery ' href="img/grid/grid-11.jpg"><img src="img/grid/grid-11.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-12.jpg"><img src="img/grid/grid-12.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-13.jpg"><img src="img/grid/grid-13.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-1.jpg"><img src="img/grid/grid-1.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-2.jpg"><img src="img/grid/grid-2.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-3.jpg"><img src="img/grid/grid-3.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-4.jpg"><img src="img/grid/grid-4.jpg" alt=""></a></li>
+							<li class="entrance-area"><a class='grid-gallery ' href="img/grid/grid-5.jpg"><img src="img/grid/grid-5.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-6.jpg"><img src="img/grid/grid-6.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-7.jpg"><img src="img/grid/grid-7.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-8.jpg"><img src="img/grid/grid-8.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-9.jpg"><img src="img/grid/grid-9.jpg" alt=""></a></li>
+							<li class="communication"><a class='grid-gallery ' href="img/grid/grid-10.jpg"><img src="img/grid/grid-10.jpg" alt=""></a></li>
+							<li class="acoustic-solutions"><a class='grid-gallery ' href="img/grid/grid-11.jpg"><img src="img/grid/grid-11.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-12.jpg"><img src="img/grid/grid-12.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-13.jpg"><img src="img/grid/grid-13.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-1.jpg"><img src="img/grid/grid-1.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-2.jpg"><img src="img/grid/grid-2.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-3.jpg"><img src="img/grid/grid-3.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-4.jpg"><img src="img/grid/grid-4.jpg" alt=""></a></li>
+							<li class="entrance-area"><a class='grid-gallery ' href="img/grid/grid-5.jpg"><img src="img/grid/grid-5.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-6.jpg"><img src="img/grid/grid-6.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-7.jpg"><img src="img/grid/grid-7.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-8.jpg"><img src="img/grid/grid-8.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-9.jpg"><img src="img/grid/grid-9.jpg" alt=""></a></li>
+							<li class="communication"><a class='grid-gallery ' href="img/grid/grid-10.jpg"><img src="img/grid/grid-10.jpg" alt=""></a></li>
+							<li class="acoustic-solutions"><a class='grid-gallery ' href="img/grid/grid-11.jpg"><img src="img/grid/grid-11.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-12.jpg"><img src="img/grid/grid-12.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-13.jpg"><img src="img/grid/grid-13.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-1.jpg"><img src="img/grid/grid-1.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-2.jpg"><img src="img/grid/grid-2.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-3.jpg"><img src="img/grid/grid-3.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-4.jpg"><img src="img/grid/grid-4.jpg" alt=""></a></li>
+							<li class="entrance-area"><a class='grid-gallery ' href="img/grid/grid-5.jpg"><img src="img/grid/grid-5.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-6.jpg"><img src="img/grid/grid-6.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-7.jpg"><img src="img/grid/grid-7.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-8.jpg"><img src="img/grid/grid-8.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-9.jpg"><img src="img/grid/grid-9.jpg" alt=""></a></li>
+							<li class="communication"><a class='grid-gallery ' href="img/grid/grid-10.jpg"><img src="img/grid/grid-10.jpg" alt=""></a></li>
+							<li class="acoustic-solutions"><a class='grid-gallery ' href="img/grid/grid-11.jpg"><img src="img/grid/grid-11.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-12.jpg"><img src="img/grid/grid-12.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-13.jpg"><img src="img/grid/grid-13.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-1.jpg"><img src="img/grid/grid-1.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-2.jpg"><img src="img/grid/grid-2.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-3.jpg"><img src="img/grid/grid-3.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-4.jpg"><img src="img/grid/grid-4.jpg" alt=""></a></li>
+							<li class="entrance-area"><a class='grid-gallery ' href="img/grid/grid-5.jpg"><img src="img/grid/grid-5.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-6.jpg"><img src="img/grid/grid-6.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-7.jpg"><img src="img/grid/grid-7.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-8.jpg"><img src="img/grid/grid-8.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-9.jpg"><img src="img/grid/grid-9.jpg" alt=""></a></li>
+							<li class="communication"><a class='grid-gallery ' href="img/grid/grid-10.jpg"><img src="img/grid/grid-10.jpg" alt=""></a></li>
+							<li class="acoustic-solutions"><a class='grid-gallery ' href="img/grid/grid-11.jpg"><img src="img/grid/grid-11.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-12.jpg"><img src="img/grid/grid-12.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-13.jpg"><img src="img/grid/grid-13.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-1.jpg"><img src="img/grid/grid-1.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-2.jpg"><img src="img/grid/grid-2.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-3.jpg"><img src="img/grid/grid-3.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-4.jpg"><img src="img/grid/grid-4.jpg" alt=""></a></li>
+							<li class="entrance-area"><a class='grid-gallery ' href="img/grid/grid-5.jpg"><img src="img/grid/grid-5.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-6.jpg"><img src="img/grid/grid-6.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-7.jpg"><img src="img/grid/grid-7.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-8.jpg"><img src="img/grid/grid-8.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-9.jpg"><img src="img/grid/grid-9.jpg" alt=""></a></li>
+							<li class="communication"><a class='grid-gallery ' href="img/grid/grid-10.jpg"><img src="img/grid/grid-10.jpg" alt=""></a></li>
+							<li class="acoustic-solutions"><a class='grid-gallery ' href="img/grid/grid-11.jpg"><img src="img/grid/grid-11.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-12.jpg"><img src="img/grid/grid-12.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-13.jpg"><img src="img/grid/grid-13.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-1.jpg"><img src="img/grid/grid-1.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-2.jpg"><img src="img/grid/grid-2.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-3.jpg"><img src="img/grid/grid-3.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-4.jpg"><img src="img/grid/grid-4.jpg" alt=""></a></li>
+							<li class="entrance-area"><a class='grid-gallery ' href="img/grid/grid-5.jpg"><img src="img/grid/grid-5.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-6.jpg"><img src="img/grid/grid-6.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-7.jpg"><img src="img/grid/grid-7.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-8.jpg"><img src="img/grid/grid-8.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-9.jpg"><img src="img/grid/grid-9.jpg" alt=""></a></li>
+							<li class="communication"><a class='grid-gallery ' href="img/grid/grid-10.jpg"><img src="img/grid/grid-10.jpg" alt=""></a></li>
+							<li class="acoustic-solutions"><a class='grid-gallery ' href="img/grid/grid-11.jpg"><img src="img/grid/grid-11.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-12.jpg"><img src="img/grid/grid-12.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-13.jpg"><img src="img/grid/grid-13.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-1.jpg"><img src="img/grid/grid-1.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-2.jpg"><img src="img/grid/grid-2.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-3.jpg"><img src="img/grid/grid-3.jpg" alt=""></a></li>
+							<li class="negotiations"><a class='grid-gallery ' href="img/grid/grid-4.jpg"><img src="img/grid/grid-4.jpg" alt=""></a></li>
+							<li class="entrance-area"><a class='grid-gallery ' href="img/grid/grid-5.jpg"><img src="img/grid/grid-5.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-6.jpg"><img src="img/grid/grid-6.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-7.jpg"><img src="img/grid/grid-7.jpg" alt=""></a></li>
+							<li class="head-office"><a class='grid-gallery ' href="img/grid/grid-8.jpg"><img src="img/grid/grid-8.jpg" alt=""></a></li>
+							<li class="work"><a class='grid-gallery ' href="img/grid/grid-9.jpg"><img src="img/grid/grid-9.jpg" alt=""></a></li>
+							<li class="communication"><a class='grid-gallery ' href="img/grid/grid-10.jpg"><img src="img/grid/grid-10.jpg" alt=""></a></li>
+							<li class="acoustic-solutions"><a class='grid-gallery ' href="img/grid/grid-11.jpg"><img src="img/grid/grid-11.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-12.jpg"><img src="img/grid/grid-12.jpg" alt=""></a></li>
+							<li class="office-chair"><a class='grid-gallery ' href="img/grid/grid-13.jpg"><img src="img/grid/grid-13.jpg" alt=""></a></li>
+						</ul>
 					</div>
 				</div>
 			</div>

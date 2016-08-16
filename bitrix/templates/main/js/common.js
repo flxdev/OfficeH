@@ -552,4 +552,22 @@ $(document).ready(function () {
 
 	} chars();
 
+
+
+
+	function smartGallery(){
+		var $grid = $('.grid-effect').isotope({
+			itemSelector: 'li',
+			percentPosition: true
+		});
+
+		$('.btn-filter').on('click', function(){
+			var filterValue = $(this).attr('data-filter');
+			$grid.isotope({ filter: filterValue });
+			$(this).addClass('is-active').siblings().removeClass('is-active');
+		});
+
+
+	} smartGallery();
+
 })
