@@ -418,6 +418,7 @@ $(document).ready(function () {
 				anchors: anchors,
 				onLeave: function(index, nextIndex, direction){
 					header(direction, nextIndex);
+					$('.tips').trigger('mouseleave');
 				}
 			});
 		};
@@ -525,6 +526,19 @@ $(document).ready(function () {
 			tip.each(function(){
 					var aria = $(this).attr('aria-describedby');
 					tips(aria, $(this));
+			});
+			
+			tip.on('mouseenter', function(){
+				if($(this).hasClass('bulb-white')) {	
+					var pPos = $(this).offset().top,
+						tPos = parseInt($('.tooltipster-base').css('top'));
+
+					if(pPos > tPos) {
+						$('.tooltipster-base').addClass('tooltipster-top bulb-white');
+					} else {
+						$('.tooltipster-base').addClass('tooltipster-bottom bulb-white');
+					}
+				}
 			});
 	} tipInit();
 

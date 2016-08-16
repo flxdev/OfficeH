@@ -940,6 +940,25 @@ h2 {
 			position: absolute;
 		}
 	}
+	&.tooltip {
+		@include x-rem(margin-top, 10px);
+		margin-bottom: 0;
+		text-align: left;
+		li {
+			width: 100%;
+			@include x-rem(padding-left, 20px);
+			@include x-rem(margin-bottom, 0);
+			&:nth-child(odd) {
+				margin-right: 0;
+			}
+			&::before {
+				@include x-rem(left, 0);
+				@include x-rem(width, 15px);
+				background-color: $text;
+				@include x-rem(top, 12px);
+			}
+		}
+	}
 }
 .return {
 	text-align: center;
@@ -1051,7 +1070,6 @@ h2 {
 	}
 }
 .contacts-requisites {
-	padding-top: 20px;
 	.contacts-item {
 		@include x-rem(margin, 0 0 40px 0);
 		&:last-of-type:not(:first-of-type) {
@@ -1746,7 +1764,7 @@ html.overlay body {
 }
 .next-stage {
 	position: absolute;
-	@include x-rem(bottom, 54px);
+	@include x-rem(bottom, 74px);
 	@include x-rem(width, 100px);
 	left: 50%;
 	transform: translateX(-50%);
@@ -1760,15 +1778,15 @@ html.overlay body {
 		@include x-rem(padding, 0 0 15px 0);
 	}
 	.stage-arrow {
-		@include x-rem(width, 22px);
-		@include x-rem(height, 22px);
+		@include x-rem(width, 44px);
+		@include x-rem(height, 44px);
 		border-bottom: 2px solid $text;
 		border-right: 2px solid $text;
 		transform: rotate(45deg);
 		display: inline-block;
 		position: absolute;
 		left: 50%;
-		@include x-rem(margin-left, -11px);
+		@include x-rem(margin-left, -22px);
 		animation: infinite alternate 0.7s arrow-motion linear;
 	}
 }
@@ -1869,11 +1887,11 @@ html.overlay body {
 				}
 			}
 			&.points-item_idea {
-				@include x-rem(width, 18px);
-				@include x-rem(height, 32px);
+				@include x-rem(width, 23px);
+				@include x-rem(height, 44px);
 				.icon {
-					@include x-rem(width, 18px);
-					@include x-rem(height, 32px);
+					@include x-rem(width, 23px);
+					@include x-rem(height, 44px);
 					background-image: url(../img/svg/bulb.svg);
 					background-size: cover;
 					background-color: transparent;
@@ -1886,7 +1904,11 @@ html.overlay body {
 					}
 				}
 				&.bulb-white {
+					@include x-rem(width, 18px);
+					@include x-rem(height, 32px);
 					.icon {
+						@include x-rem(width, 18px);
+						@include x-rem(height, 32px);
 						background-image: url(../img/svg/bulb-white.svg);
 					}
 				}
@@ -1897,48 +1919,31 @@ html.overlay body {
 					// opacity: 1;
 					// visibility: visible;
 					// transform: none;
-					@include x-rem(bottom, 50px);
-					background-color: $white;
+					@include x-rem(bottom, 5px);
 					@include x-rem(width, 451px);
 					z-index: 15;
 					&::after {
 						content: '';
-						@include x-rem(bottom, -75px);
-						@include x-rem(right, 96px);
-						background-image: url(../img/svg/circle.svg);
+						left: 69%;
+						background-image: url(../img/svg/element.svg);
 						background-size: cover;
-						@include x-rem(width, 30px);
-						@include x-rem(height, 30px);
+						@include x-rem(width, 22px);
+						@include x-rem(height, 17px);
+						background-size: cover;
 						position: absolute;
+						@include x-rem(bottom, -15px);
+						z-index: 5;
 					}
 				}
 				.points-infobox__inner {
 					position: relative;
-					@include x-rem(margin, -35px 0 -55px);
-					@include x-rem(padding, 35px 19px);
-					&::before {
-						content: '';
-						position: absolute;
-						top: 0;
-						@include x-rem(left, -4px);
-						@include x-rem(right, -5px);
-						@include x-rem(height, 37px);
-						background-image: url(../img/svg/rectangle-top.svg);
-						background-repeat: no-repeat;
-						background-size: cover;
-						z-index: -1;
-					}
+					@include x-rem(padding, 20px 19px);
+					border: solid #47424c;
+					@include x-rem(border-width, 2px);
+					border-radius: 6px;
+					background-color: $white;
 					&::after {
 						content: '';
-						position: absolute;
-						bottom: 0;
-						left: -1px;
-						@include x-rem(right, -3px);
-						@include x-rem(height, 55px);
-						background-image: url(../img/svg/rectangle-bottom.svg);
-						background-repeat: no-repeat;
-						background-size: cover;
-						z-index: -1;
 					}
 				}
 			}
@@ -1967,6 +1972,46 @@ html.overlay body {
 		font-size: 16px;
 		@include x-rem(font-size, 16px);
 		color: #47424c;
+		&:not(:last-of-type) {
+			@include x-rem(margin-bottom, 10px);
+		}
+	}
+}
+.tooltipster-default.bulb-white {
+	box-shadow: none; 
+	background-color: transparent;
+	.tooltipster-content {
+		@include x-rem(padding, 20px 19px);
+		text-align: left;
+		border: solid #47424c;
+		@include x-rem(border-width, 2px);
+		border-radius: 6px;
+		background-color: $white;	
+	}
+	.tooltipster-arrow {
+		display: block;
+		z-index: 1;
+		@include x-rem(width, 22px);
+		@include x-rem(height, 17px);
+		left: 50%!important;
+		@include x-rem(bottom, -15px);
+		top: auto;
+		@include x-rem(margin-left, -21px);
+		span {
+			background-image: url(../img/svg/element.svg);
+			background-size: cover;
+			@include x-rem(width, 22px);
+			@include x-rem(height, 17px);
+			border: none!important;
+			bottom: 0;
+		}
+		&.tooltipster-arrow-bottom {
+			bottom: auto;
+			@include x-rem(top, -8px);
+			span {
+				transform: rotate(-180deg);
+			}
+		}
 	}
 }
 .creation {
