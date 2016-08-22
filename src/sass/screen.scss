@@ -161,6 +161,21 @@ a {
 			}
 		}
 	}
+	&.mobile {
+		.overlay {
+			display: none;
+		}
+		.menu {
+			.menu-btn {
+				opacity: 1;
+				visibility: visible;
+				transform: none;
+			}
+		}
+		.language {
+			@include x-rem(margin-right, 80px);
+		}
+	}
 }
 .social {
 	float: right;
@@ -186,7 +201,7 @@ a {
 .language {
 	float: right;
 	font-size: 0;
-	@include x-rem(margin-top, 37px);
+	@include x-rem(margin-top, 39px);
 	transition: all 0.5s ease 0s;
 	.language-item {
 		display: inline-block;
@@ -219,11 +234,15 @@ a {
 #index {
 	.wrapper {
 		@include x-rem(max-width, 964px);
-		margin: 0 auto;
 		position: absolute;
-		top: 45%;
+		top: 35%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		@include x-rem(margin-left, -462px);
+		width: 100%;
+		.lead {
+			width: 100%;
+		}
+		// transform: translate(-50%, -50%);
 		.l {
 			width: 100%;
 		}
@@ -252,17 +271,23 @@ a {
 			left: 0;
 			bottom: 0;
 			right: 0;
-			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0.5+75,0.5+75,0.5+100,0.5+100,0.5+100 */
-			/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
-			background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 75%, rgba(255,255,255,0.5) 100%); /* FF3.6-15 */
-			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(75%,rgba(255,255,255,0.5)), color-stop(100%,rgba(255,255,255,0.5))); /* Chrome4-9,Safari4-5 */
-			background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
-			background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0.5) 100%); /* Opera 11.10-11.50 */
-			background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0.5) 100%); /* IE10 preview */
-			background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#80ffffff',GradientType=0 ); /* IE6-8 */
+			// background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjUiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+			// background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 75%, rgba(255,255,255,0.5) 100%); /* FF3.6-15 */
+			// background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(75%,rgba(255,255,255,0.5)), color-stop(100%,rgba(255,255,255,0.5)));
+			// background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0.5) 100%);
+			// background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0.5) 100%);
+			// background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0.5) 100%);
+			// background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0.5) 100%);
+			// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#80ffffff',GradientType=0 );
 			content: '';
+			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI1JSIgc3RvcC1jb2xvcj0iI2ZiZmJmYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZGVkZWQiIHN0b3Atb3BhY2l0eT0iMC41Ii8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+			background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(251,251,251,1) 25%, rgba(237,237,237,0.5) 100%); /* FF3.6-15 */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(25%,rgba(251,251,251,1)), color-stop(100%,rgba(237,237,237,0.5))); /* Chrome4-9,Safari4-5 */
+			background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(251,251,251,1) 25%,rgba(237,237,237,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(251,251,251,1) 25%,rgba(237,237,237,0.5) 100%); /* Opera 11.10-11.50 */
+			background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(251,251,251,1) 25%,rgba(237,237,237,0.5) 100%); /* IE10 preview */
+			background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(251,251,251,1) 25%,rgba(237,237,237,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#80ededed',GradientType=0 ); /* IE6-8 */
 		}
 	}
 	.swiper-pagination {
@@ -312,7 +337,7 @@ a {
 			@include x-rem(line-height, 70px);
 			@include x-rem(border-radius, 35px);
 			background-color: $yellow;
-			font-family: $M900;
+			font-family: $M300;
 			text-transform: uppercase;
 			@include x-rem(font-size, 12px);
 			color: $brown;
@@ -847,7 +872,7 @@ h2 {
 	@include x-rem(border-radius, 35px);
 	background-color: $yellow;
 	span {
-		font-family: $M900;
+		font-family: $M300;
 		@include x-rem(font-size, 12px);
 		color: $brown;
 		margin: 0 auto;
@@ -1202,6 +1227,12 @@ html.overlay body {
 	text-align: center;
 	@include x-rem(line-height, 30px);
 	@include x-rem(letter-spacing, 0.75px);
+}
+.section.stage-6 {
+	.relation p {
+		@include x-rem(font-size, 16px);
+		@include x-rem(line-height, 25px);
+	}
 }
 .grid-layout {
 	&.accordions {
@@ -1739,6 +1770,7 @@ html.overlay body {
 					@include x-rem(height, 32px);
 					background-size: cover;
 					background-color: transparent;
+					border-radius: 0;
 				}
 				svg {
 					display: none;
@@ -1757,14 +1789,16 @@ html.overlay body {
 				}
 			}
 			&.points-item_idea {
-				@include x-rem(width, 23px);
-				@include x-rem(height, 44px);
+				@include x-rem(width, 31px);
+				@include x-rem(height, 55px);
 				.icon {
-					@include x-rem(width, 23px);
-					@include x-rem(height, 44px);
+					@include x-rem(width, 31px);
+					@include x-rem(height, 55px);
 					background-image: url(../img/svg/bulb.svg);
-					background-size: cover;
+					background-size: contain;
+					background-repeat: no-repeat;
 					background-color: transparent;
+					border-radius: 0;
 					&:hover {
 						opacity: 0;
 						& + .points-infobox {
@@ -1779,6 +1813,7 @@ html.overlay body {
 					.icon {
 						@include x-rem(width, 18px);
 						@include x-rem(height, 32px);
+						border-radius: 0;
 						background-image: url(../img/svg/bulb-white.svg);
 					}
 				}
@@ -1795,7 +1830,7 @@ html.overlay body {
 					&::after {
 						content: '';
 						left: 69%;
-						background-image: url(../img/svg/element.svg);
+						background-image: url(../img/svg/element-white.svg);
 						background-size: cover;
 						@include x-rem(width, 22px);
 						@include x-rem(height, 17px);
@@ -1808,9 +1843,10 @@ html.overlay body {
 				.points-infobox__inner {
 					position: relative;
 					@include x-rem(padding, 20px 19px);
-					border: solid #47424c;
+					border: solid transparent;
 					@include x-rem(border-width, 2px);
 					border-radius: 6px;
+					box-shadow: 0 5px 32px rgba(74,63,87,.19);
 					background-color: $white;
 					&::after {
 						content: '';
@@ -1848,12 +1884,11 @@ html.overlay body {
 	}
 }
 .tooltipster-default.bulb-white {
-	box-shadow: none; 
 	background-color: transparent;
 	.tooltipster-content {
 		@include x-rem(padding, 20px 19px);
 		text-align: left;
-		border: solid #47424c;
+		border: solid transparent;
 		@include x-rem(border-width, 2px);
 		border-radius: 6px;
 		background-color: $white;	
@@ -1868,7 +1903,7 @@ html.overlay body {
 		top: auto;
 		@include x-rem(margin-left, -21px);
 		span {
-			background-image: url(../img/svg/element.svg);
+			background-image: url(../img/svg/element-white.svg);
 			background-size: cover;
 			@include x-rem(width, 22px);
 			@include x-rem(height, 17px);

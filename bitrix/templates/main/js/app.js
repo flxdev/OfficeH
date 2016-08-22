@@ -5,6 +5,10 @@ $(document).ready(function () {
 	}
 	drag();
 
+	if(head.mobile) {
+		$('.header').addClass('mobile');
+	}
+
 	// swiper slider
 	(function(){
 		var interleaveOffset = -.5,
