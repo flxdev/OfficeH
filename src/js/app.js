@@ -465,4 +465,34 @@ $(document).ready(function () {
 
 	} smartGallery();
 
+	// scroll top
+	$(document).scroll(function() {    
+		var scroll 			= $(this).scrollTop(),
+			hDoc 			= $(document).height(),
+			hWind 			= $(window).height(),
+			hFooter 		= $(".footer").height(),
+			scrolltop 		= $(".scroller"),
+			scroll_position = hDoc - hWind - hFooter - 250;
+		if (scroll > 350) {
+			scrolltop.addClass("visible");
+			$(window).resize(function() {
+				wScroll();
+			});
+			function wScroll() {
+				if (scroll >= scroll_position) {
+					scrolltop.addClass("is-abs");
+				}else{
+					scrolltop.removeClass("is-abs");
+				}
+			} wScroll();
+		}
+		else{
+			scrolltop.removeClass("visible");
+		}
+	});
+	$(".scroller").on("click", function() {
+		$("html, body").animate({
+			scrollTop: 0
+		}, 800);
+	});
 })

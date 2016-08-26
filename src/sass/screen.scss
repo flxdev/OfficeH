@@ -2002,147 +2002,29 @@ html.overlay body {
 		}
 	}
 }
-// .section {
-// 	&.stage-2 {
-// 		.points-item {
-// 			// &.point-1 {
-// 			// 	left: 49.1%;
-// 			// 	top: 50.9%;
-// 			// }
-// 		}
-// 	}
-// 	&.stage-3 {
-// 		.points-item {
-// 			&.point-1 {
-// 				left: 16.1%;
-// 				top: 24.2%;
-// 			}
-// 			&.point-2 {
-// 				left: 48.45%;
-// 				top: 23.2%;
-// 			}
-// 			&.point-3 {
-// 				right: 17.1%;
-// 				top: 25.9%;
-// 			}
-// 			&.point-4 {
-// 				right: 22.5%;
-// 				top: 30.9%;
-// 			}
-// 			&.point-5 {
-// 				right: 49.5%;
-// 				top: 36.9%;
-// 			}
-// 			&.point-6 {
-// 				left: 16.1%;
-// 				top: 47.2%;
-// 			}
-// 			&.point-7 {
-// 				right: 18.1%;
-// 				top: 46.2%;
-// 			}
-// 			&.point-8 {
-// 				bottom: 37.3%;
-// 				right: 49.4%;
-// 			}
-// 			&.point-9 {
-// 				bottom: 23.6%;
-// 				right: 49.1%;
-// 			}
-// 			&.point-10 {
-// 				bottom: 17.6%;
-// 				left: 12.8%;
-// 			}
-// 			&.point-11 {
-// 				bottom: 14.3%;
-// 				left: 25.4%;
-// 			}
-// 			&.point-12 {
-// 				bottom: 13.3%;
-// 				right: 16.2%;
-// 			}
-// 			&.point-13 {
-// 				top: 46%;
-// 				left: 40.5%;
-// 			}
-// 		}
-// 	}
-// 	&.stage-4 {
-// 		.points-item {
-// 			&.point-1 {
-// 				left: 49%;
-// 				top: 17.1%;
-// 			}
-// 			&.point-2 {
-// 				right: 24.7%;
-// 				top: 37.9%;
-// 			}
-// 			&.point-3 {
-// 				right: 3.1%;
-// 				top: 50.4%;
-// 			}
-// 			&.point-4 {
-// 				bottom: 36.6%;
-// 				right: 31.5%;
-// 			}
-// 			&.point-5 {
-// 				bottom: 29%;
-// 				right: 10.4%;
-// 			}
-// 			&.point-6 {
-// 				bottom: 25.2%;
-// 				left: 52.1%;
-// 			}
-// 			&.point-7 {
-// 				bottom: 27.8%;
-// 				left: 29.1%;
-// 			}
-// 			&.point-8 {
-// 				bottom: 14.5%;
-// 				left: 14.8%;
-// 			}
-// 			&.point-9 {
-// 				bottom: 9.9%;
-// 				left: 23.1%;
-// 			}
-// 		}
-// 	}
-// 	&.stage-5 {
-// 		.points-item {
-// 			&.point-1 {
-// 				left: 6.2%;top: 4.1%
-// 			}
-// 			&.point-2 {
-// 				right: 49.2%;top: 13.4%;
-// 			}
-// 			&.point-3 {
-// 				right: 48%;top: 30.4%;
-// 			}
-// 			&.point-4 {
-// 				right: 33.4%;top: 38.5%;
-// 			}
-// 			&.point-5 {
-// 				right: 24.8%;top: 38%;
-// 			}
-// 			&.point-6 {
-// 				bottom: 47.1%;right: 3.2%;
-// 			}
-// 			&.point-7 {
-// 				bottom: 36.8%;right: 34%;
-// 			}
-// 			&.point-8 {
-// 				bottom: 28.9%;right: 10.6%;
-// 			}
-// 			&.point-9 {
-// 				bottom: 25.9%;left: 49.1%;
-// 			}
-// 			&.point-10 {
-// 				bottom: 50.4%;left: 22.1%;
-// 			}
-// 		}
-// 	}
-// }
-
+.scroller {
+	position: fixed;
+	@include x-rem(bottom, 50px);
+	@include x-rem(right, 50px);
+	@include x-rem(width, 53px);
+	@include x-rem(height, 53px);
+	background-image: url(../img/icons/scroller.png);
+	background-size: cover;
+	cursor: pointer;
+	opacity: 0.4;
+	transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+	transform: translate(0, 110px);
+	z-index: 15;
+	&:hover {
+		opacity: 1;
+	}
+	&.visible {
+		transform: translate(0);
+		&.is-abs {
+			transform: translate(0, -80px);
+		}
+	}
+}
 @media only screen and (max-height: 400px) {
 	html {
 		font-size: 10px;
